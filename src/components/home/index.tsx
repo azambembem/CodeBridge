@@ -1,4 +1,5 @@
 import Categories from "./customs/categories";
+import CategorySet from "./customs/category-set";
 import Flayer from "./customs/flayer";
 import Today from "./customs/today";
 
@@ -11,6 +12,7 @@ const Home = () => {
         <Flayer />
       </div>
       <Today />
+      <CategorySet />
     </div>
   );
 };
