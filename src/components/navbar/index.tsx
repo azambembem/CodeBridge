@@ -35,7 +35,7 @@ const Navbar = () => {
             </Button>
           </div>
           <div className="flex items-center gap-6">
-            <div className="relative w-[240px] bg-red-500">
+            <div className="relative w-[240px]">
               <Input placeholder="What are you looking for?" />
               <Search className="absolute top-2 right-4 w-5 h-5" />
             </div>
