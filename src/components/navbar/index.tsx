@@ -1,24 +1,53 @@
 import { useNavigate } from "react-router-dom";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Heart, Search, ShoppingCart } from "lucide-react";
+import Discount from "./customs/warnings/discount";
 
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <div className="w-[90%] m-auto h-[40px] flex items-center justify-between">
-      <div>
-        <h3
-          onClick={() => navigate("/")}
-          className="text-2xl font-bold cursor-pointer"
-        >
-          Exclusive
-        </h3>
+    <div>
+      <Discount />
+      <div className="border-b border-solid pt-[47px] pb-[23px]">
+        <div className="w-[90%] m-auto h-[40px] flex items-center justify-between">
+          <div>
+            <Button
+              variant="link"
+              onClick={() => navigate("/")}
+              className="text-2xl font-bold cursor-pointer"
+            >
+              Exclusive
+            </Button>
+          </div>
+          <div className="flex items-center gap-4">
+            <Button onClick={() => navigate("/")} variant="link">
+              Home
+            </Button>
+            <Button onClick={() => navigate("/contact")} variant="link">
+              Contact
+            </Button>
+            <Button onClick={() => navigate("/about")} variant="link">
+              About
+            </Button>
+            <Button onClick={() => navigate("/sign-up")} variant="link">
+              Sign Up
+            </Button>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="relative w-[240px] bg-red-500">
+              <Input placeholder="What are you looking for?" />
+              <Search className="absolute top-2 right-4 w-5 h-5" />
+            </div>
+            <Button variant="ghost">
+              <Heart />
+            </Button>
+            <Button variant="ghost">
+              <ShoppingCart />
+            </Button>
+          </div>
+        </div>
       </div>
-      <div className="flex items-center gap-4">
-        <h3 className="text-base cursor-pointer">Home</h3>
-        <h3 className="text-base cursor-pointer">Contact</h3>
-        <h3 className="text-base cursor-pointer">About</h3>
-        <h3 className="text-base cursor-pointer">Sign Up</h3>
-      </div>
-      <div></div>
     </div>
   );
 };
