@@ -4,6 +4,7 @@ import DiscountProduct from "./customs/discount-product";
 import Flayer from "./customs/flayer";
 import NewArrival from "./customs/new-arrival";
 import OurProducts from "./customs/our-products";
+import Service from "./customs/service";
 import ThisMonth from "./customs/this-month";
 import Today from "./customs/today";
 
@@ -21,6 +22,7 @@ const Home = () => {
       <DiscountProduct />
       <OurProducts />
       <NewArrival />
+      <Service />
     </div>
   );
 };
