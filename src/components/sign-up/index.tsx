@@ -2,8 +2,30 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { GoogleOutlined } from "@ant-design/icons";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const SignUp = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      password: ""
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .required("Name is required")
+        .min(8, "Name must be at least 8 characters"),
+      email: Yup.string().email("Invalid email").required("Email is required"),
+      password: Yup.string()
+        .required("Password is required")
+        .min(8, "Password must be at least 8 characters")
+    })
+  });
+
   const navigate = useNavigate();
   return (
     <div className="h-screen w-full flex items-center">
@@ -14,19 +36,38 @@ const SignUp = () => {
         />
       </div>
       <div className="w-[40%] h-full flex items-center justify-center">
-        <form className="w-[341px]">
+        <form onSubmit={formik.handleSubmit} className="w-[341px]">
           <h1 className="text-4xl">Create an account</h1>
           <h3 className="text-base mt-6">Enter your details below</h3>
 
-          <Input placeholder="Name" type="name" className="mt-12" />
           <Input
+            minLength={8}
+            required
+            placeholder="Name"
+            type="name"
+            className="mt-12"
+            {...formik.getFieldProps("name")}
+          />
+          <Input
+            required
             placeholder="Email or Phone Number"
             type="email"
             className="mt-10"
+            {...formik.getFieldProps("email")}
           />
-          <Input placeholder="Password" type="password" className="mt-10" />
+          <Input
+            required
+            placeholder="Password"
+            type="password"
+            minLength={8}
+            className="mt-10"
+            {...formik.getFieldProps("password")}
+          />
 
-          <Button className="mt-10 h-[56px] w-full bg-[#DB4444]">
+          <Button
+            disabled={!(formik.dirty && formik.isValid)}
+            className="mt-10 h-[56px] w-full bg-[#DB4444]"
+          >
             Create Account
           </Button>
 
