@@ -3,30 +3,26 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { GoogleOutlined } from "@ant-design/icons";
 import { useFormik } from "formik";
-import * as Yup from "yup";
+import { useSignUpFeatures } from "./features";
+import type { SignUpForm } from "@/types/sign-up";
+import { signUpSchema } from "@/models/validation/sign-up";
 
 const SignUp = () => {
-  const formik = useFormik({
+  const navigate = useNavigate();
+  const {
+    onSubmit: { mutateAsync: onSubmit }
+  } = useSignUpFeatures();
+
+  const formik = useFormik<SignUpForm>({
     initialValues: {
       name: "",
       email: "",
       password: ""
     },
-    onSubmit: (values) => {
-      console.log(values);
-    },
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .required("Name is required")
-        .min(8, "Name must be at least 8 characters"),
-      email: Yup.string().email("Invalid email").required("Email is required"),
-      password: Yup.string()
-        .required("Password is required")
-        .min(8, "Password must be at least 8 characters")
-    })
+    onSubmit: async (values) => await onSubmit(values),
+    validationSchema: signUpSchema
   });
 
-  const navigate = useNavigate();
   return (
     <div className="h-screen w-full flex items-center">
       <div className="w-[60%] h-full bg-[#cbe4eb]">
@@ -65,9 +61,10 @@ const SignUp = () => {
           />
 
           <Button
-            disabled={!(formik.dirty && formik.isValid)}
+            disabled={!(formik.dirty && formik.isValid) || formik.isSubmitting}
             className="mt-10 h-[56px] w-full bg-[#DB4444]"
           >
+            {formik.isSubmitting ? "Creating Account..." : "Creat Account"}
             Create Account
           </Button>
 

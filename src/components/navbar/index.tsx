@@ -3,8 +3,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import Discount from "./customs/warnings/discount";
+import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 const Navbar = () => {
+  const isAuthenticated = useIsAuthenticated();
+
   const navigate = useNavigate();
   return (
     <div>
@@ -30,9 +33,11 @@ const Navbar = () => {
             <Button onClick={() => navigate("/about")} variant="link">
               About
             </Button>
-            <Button onClick={() => navigate("/sign-up")} variant="link">
-              Sign Up
-            </Button>
+            {!isAuthenticated && (
+              <Button onClick={() => navigate("/sign-up")} variant="link">
+                Sign Up
+              </Button>
+            )}
           </div>
           <div className="flex items-center gap-6">
             <div className="relative w-[240px]">

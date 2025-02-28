@@ -9,18 +9,25 @@ import Footer from "./components/footer";
 // import SignIn from "./pages/sign-in";
 // import SignUp from "./pages/sign-up";
 import { authed_route, unauthed_route } from "./utils/routes";
+import { Toaster } from "@/components/ui/sonner";
+import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 const App = () => {
+  const isAuthenticated = useIsAuthenticated();
+
   return (
-    <div>
+    <div className="w-full">
+      <Toaster />
       <Navbar />
       <Routes>
-        {unauthed_route.map((route, index) => {
-          return <Route key={index} {...route} />; // yani biz buyerda map orqali ro'yxatdan  utmaganganlarni ishatdik.
-        })}
-        {authed_route.map((route) => {
+        {(isAuthenticated ? authed_route : unauthed_route).map(
+          (route, index) => {
+            return <Route key={index} {...route} />; // yani biz buyerda map orqali ro'yxatdan  utmaganganlarni ishatdik.
+          }
+        )}
+        {/* {authed_route.map((route) => {
           return <Route key={route.id} {...route} />; // yani biz buyerda map orqali ro'yxatdan utganlarni ishatdik.
-        })}
+        })} */}
         {/* <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} /> */}
