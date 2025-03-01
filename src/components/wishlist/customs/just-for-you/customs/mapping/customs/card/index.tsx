@@ -1,9 +1,7 @@
-import { addProduct } from "@/redux/slices/wishlist";
 import type { IProduct } from "@/types/home";
 import { Rate } from "antd";
 import { Eye, Heart } from "lucide-react";
 import type { FC } from "react";
-import { useDispatch } from "react-redux";
 
 type CardProps = {
   product: IProduct;
@@ -18,8 +16,6 @@ const calculateDiscountRange = (product: IProduct): number => {
 
 const Card: FC<CardProps> = (props) => {
   const { product } = props;
-  const dispatch = useDispatch();
-
   return (
     <div className="h-[350px] w-full flex flex-col gap-4">
       <div className="h-[250px] bg-[#f5f5f5] relative flex items-center justify-center group rounded-lg">
@@ -42,10 +38,7 @@ const Card: FC<CardProps> = (props) => {
             <h3 className="text-xs ">-{product?.discount}%</h3>
           </div>
         )}
-        <div
-          onClick={() => dispatch(addProduct(product))}
-          className="w-full absolute bottom-0 left-0 bg-black rounded-bl-lg rounded-br-lg items-center justify-center cursor-pointer hidden group-hover:flex"
-        >
+        <div className="w-full absolute bottom-0 left-0 bg-black rounded-bl-lg rounded-br-lg items-center justify-center cursor-pointer hidden group-hover:flex">
           <h3 className="text-base font-medium text-white">Add To Cart</h3>
         </div>
       </div>

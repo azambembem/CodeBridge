@@ -69,7 +69,7 @@ const Navbar = () => {
             <Button variant="ghost">
               <Heart />
             </Button>
-            <Button variant="ghost">
+            <Button onClick={() => navigate("/wishlist")} variant="ghost">
               <ShoppingCart />
             </Button>
             {isAuthenticated && (
