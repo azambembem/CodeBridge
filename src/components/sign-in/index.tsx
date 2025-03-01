@@ -52,7 +52,7 @@ const SignIn = () => {
             disabled={!(formik.dirty && formik.isValid)}
             className="mt-10 h-[56px] w-full bg-[#DB4444]"
           >
-            Create Account
+            {formik.isSubmitting ? "Signing in" : "Sign in"}
           </Button>
 
           <div className="flex items-center gap-2 mt-8">

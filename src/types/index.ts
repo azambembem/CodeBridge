@@ -1,4 +1,4 @@
-import type { UseMutationResult } from "@tanstack/react-query";
+import type { UseMutationResult, UseQueryResult } from "@tanstack/react-query";
 
 export type MutationResult<T> = UseMutationResult<void, Error, T, void>;
 
@@ -7,3 +7,5 @@ export type AxiosResponse<T = unknown>= {
     data: T;
     message: string | null;
 };
+
+export type QueryResult <T> =  UseQueryResult<T>;
