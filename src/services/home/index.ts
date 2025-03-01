@@ -40,3 +40,40 @@ export const useTodayCache = (): TodayCache => {
     });
     return {products}
 }
+
+type MonthCache = {
+    products:  QueryResult<IProduct[]>;
+};
+
+export const useMonthCache = (): MonthCache => {
+    const products = useQuery({
+        queryKey: ["home/products/trend/month"],
+        queryFn: async () => {
+            const { data } = await axios.get<AxiosResponse<IProduct[]>>
+            (`${import.meta.env.VITE_MAIN_APP}/products/most-popular-monthly`,
+          );
+          return data?.data
+  
+        },
+    });
+    return {products}
+}
+
+
+type OurProductsCache = {
+    products:  QueryResult<IProduct[]>;
+};
+
+export const useOurProductsCache = (): OurProductsCache => {
+    const products = useQuery({
+        queryKey: ["home/products"],
+        queryFn: async () => {
+            const { data } = await axios.get<AxiosResponse<IProduct[]>>
+            (`${import.meta.env.VITE_MAIN_APP}/products`,
+          );
+          return data?.data
+  
+        },
+    });
+    return {products}
+}
