@@ -6,7 +6,7 @@ export const wishlistSlice = createSlice({
         products: [],
     },
     reducers: {
-        addProduct: (state, payload) => {
+        addProduct: (state, {payload}) => {
             if (state.products.find(({ id }) => id === payload?.id)) {
                  state.products.filter(({ id }) => id !== payload?.id);
             } else {
@@ -14,8 +14,8 @@ export const wishlistSlice = createSlice({
                 state.products.push(payload);
             }
         },
-        removeProduct: (state, payload) => {
-            state.products.filter(({id}) => id !== payload?.id);
+        removeProduct: (state, {payload}) => {
+            state.products = state.products.filter(({id}) => id !== payload?.id);
         },
         
     }
