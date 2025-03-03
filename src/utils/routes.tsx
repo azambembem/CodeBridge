@@ -1,3 +1,4 @@
+import Cart from "@/pages/cart";
 import Home from "@/pages/home";
 import SignIn from "@/pages/sign-in";
 import SignUp from "@/pages/sign-up";
@@ -14,6 +15,11 @@ export const authed_route = [
   {
     path: "/wishlist",
     element: <Wishlist />, // wishlist royxatdan utgan bulsa ham korinadi utmagan bulsa ham shuning uchun pastda ham bor
+    id: v4()
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
     id: v4()
   }
 ]; //
@@ -38,6 +44,11 @@ export const unauthed_route = [
   {
     path: "/wishlist",
     element: <Wishlist />,
+    id: v4()
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
     id: v4()
   }
 ];

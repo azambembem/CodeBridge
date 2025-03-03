@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
 import Card from "./customs/card";
 import Header from "./customs/header";
+import { useReduxSelector } from "@/hooks/useRedux";
 
 const Wishlists = () => {
-  const { products } = useSelector((state) => state.wishlist);
+  const { products } = useReduxSelector(({ wishlist }) => wishlist);
 
   console.log(products);
 

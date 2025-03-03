@@ -1,9 +1,9 @@
+import { useReduxDishpatch } from "@/hooks/useRedux";
 import { addProduct } from "@/redux/slices/wishlist";
 import type { IProduct } from "@/types/home";
 import { Rate } from "antd";
 import { Eye, Heart } from "lucide-react";
 import type { FC } from "react";
-import { useDispatch } from "react-redux";
 
 type CardProps = {
   product: IProduct;
@@ -18,7 +18,7 @@ const calculateDiscountRange = (product: IProduct): number => {
 
 const Card: FC<CardProps> = (props) => {
   const { product } = props;
-  const dispatch = useDispatch();
+  const dispatch = useReduxDishpatch();
 
   return (
     <div className="h-[350px] w-full flex flex-col gap-4">

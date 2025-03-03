@@ -1,25 +1,49 @@
+import type { IProduct } from "@/types/home";
 import { createSlice } from "@reduxjs/toolkit"
+
+type TInitialState = {
+    products: (IProduct & {quantity: number}) []
+}
+
+const initialState: TInitialState ={
+    products: [],
+}
 
 export const wishlistSlice = createSlice({
     name: "wishlist",
-    initialState: {
-        products: [],
-    },
+    initialState,
     reducers: {
-        addProduct: (state, {payload}) => {
-            if (state.products.find(({ id }) => id === payload?.id)) {
-                 state.products.filter(({ id }) => id !== payload?.id);
-            } else {
+        addProduct: (state, {payload}: {payload: IProduct}) => {
 
-                state.products.push(payload);
+            const foundProduct = state.products.find(({_id}) => _id === payload._id);
+
+            if (foundProduct) {
+                state.products.filter(({ _id }) => _id !== payload?._id);
+                
+            }if (!foundProduct) {
+                
+                state.products.push({...payload, quantity: 1});
+
             }
+                
+            },
+        
+        removeProduct: (state, {payload}: {payload: IProduct}) => {
+            state.products = state.products.filter(({_id}) => _id !== payload?._id);
         },
-        removeProduct: (state, {payload}) => {
-            state.products = state.products.filter(({id}) => id !== payload?.id);
-        },
+        setProduct: (
+            state, {payload} : {payload: Partial<IProduct & {quantity: number}> },
+        ) => {
+            state.products = state.products.map((product) => {
+                if (product._id === payload._id) {
+                    return {...product,...payload};
+                }
+                return product;
+            })
+        }
         
     }
 })
 
 export default wishlistSlice.reducer;
-export const {addProduct, removeProduct} = wishlistSlice.actions;
+export const {addProduct, removeProduct, setProduct} = wishlistSlice.actions;

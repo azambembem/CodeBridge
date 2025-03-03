@@ -25,12 +25,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+import { Badge } from "antd";
+import { useReduxSelector } from "@/hooks/useRedux";
 
 const Navbar = () => {
   const user = useAuthUser<TUser>();
   const signOut = useSignOut();
   const navigate = useNavigate();
   const isAuthenticated = useIsAuthenticated();
+  const { products } = useReduxSelector(({ wishlist }) => wishlist);
+
   return (
     <div>
       <Discount />
@@ -69,9 +73,12 @@ const Navbar = () => {
             <Button variant="ghost">
               <Heart />
             </Button>
-            <Button onClick={() => navigate("/wishlist")} variant="ghost">
-              <ShoppingCart />
-            </Button>
+            <Badge count={products.length}>
+              <Button onClick={() => navigate("/wishlist")} variant="ghost">
+                <ShoppingCart />
+              </Button>
+            </Badge>
+
             {isAuthenticated && (
               <DropdownMenu>
                 <DropdownMenuTrigger>

@@ -6,3 +6,5 @@ export const calculateDiscountRange = (product: IProduct): number => {
 
   return Number(price_before_discount.toFixed(0));
 }
+
+
