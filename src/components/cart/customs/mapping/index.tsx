@@ -62,7 +62,9 @@ const Mapping = () => {
         <Button onClick={() => navigate("/")} variant={"outline"}>
           Return To Shop
         </Button>
-        <Button variant={"outline"}>Update Cart</Button>
+        <Button onClick={() => navigate("/wishlist")} variant={"outline"}>
+          Update Cart
+        </Button>
       </div>
     </div>
   );

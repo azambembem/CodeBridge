@@ -1,3 +1,4 @@
+import Billing from "@/pages/billing";
 import Cart from "@/pages/cart";
 import Home from "@/pages/home";
 import SignIn from "@/pages/sign-in";
@@ -20,6 +21,11 @@ export const authed_route = [
   {
     path: "/cart",
     element: <Cart />,
+    id: v4()
+  },
+  {
+    path: "/billing",
+    element: <Billing />,
     id: v4()
   }
 ]; //
@@ -49,6 +55,11 @@ export const unauthed_route = [
   {
     path: "/cart",
     element: <Cart />,
+    id: v4()
+  },
+  {
+    path: "/billing",
+    element: <Billing />,
     id: v4()
   }
 ];

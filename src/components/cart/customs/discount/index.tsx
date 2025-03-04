@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useReduxSelector } from "@/hooks/useRedux";
 import { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Discount = () => {
+  const navigate = useNavigate();
   const { products } = useReduxSelector(({ wishlist }) => wishlist);
 
   const call = useMemo(() => {
@@ -44,7 +46,9 @@ const Discount = () => {
           <div className="border border-solid" />
         </div>
 
-        <Button variant={"destructive"}>Procees to checkout</Button>
+        <Button onClick={() => navigate("/billing")} variant={"destructive"}>
+          Procees to checkout
+        </Button>
       </div>
     </div>
   );
