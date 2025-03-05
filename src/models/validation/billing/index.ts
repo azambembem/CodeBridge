@@ -13,9 +13,6 @@ export const validationSchema = Yup.object({
     .required("Street Address is required")
     .min(2, "Too Short")
     .max(50, "Too Long"),
-  additional_address: Yup.string()
-    .min(2, "Too Short")
-    .max(50, "Too Long"),
   city: Yup.string()
     .required("City is required")
     .min(2, "Too Short")

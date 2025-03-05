@@ -14,7 +14,6 @@ type SignUpFeatures = {
 
 export const useSignUpFeatures = (): SignUpFeatures => {
   const signIn = useSignIn();
-  console.log();
   
   const navigate = useNavigate();
 

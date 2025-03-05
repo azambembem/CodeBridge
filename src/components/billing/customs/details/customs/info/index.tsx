@@ -4,7 +4,6 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useReduxSelector } from "@/hooks/useRedux";
 import type { BillingForm } from "@/types/billing";
-import { Checkbox } from "antd";
 import type { useFormik } from "formik";
 import type { FC } from "react";
 import { useMemo } from "react";
@@ -108,7 +107,10 @@ const Info: FC<InfoProps> = (props) => {
       </div>
 
       <Button
-        disabled={!(formik.dirty && formik.isValid) || formik.isSubmitting}
+        disabled={
+          !(formik.dirty && formik.isValid && Boolean(products.length)) ||
+          formik.isSubmitting
+        }
         variant={"destructive"}
         className="mt-8"
         type="submit"

@@ -40,10 +40,13 @@ export const wishlistSlice = createSlice({
                 }
                 return product;
             })
+        },
+        setInitialState: (state) => {
+            state.products = [];
         }
         
     }
 })
 
 export default wishlistSlice.reducer;
-export const {addProduct, removeProduct, setProduct} = wishlistSlice.actions;
+export const {addProduct, removeProduct, setProduct, setInitialState} = wishlistSlice.actions;

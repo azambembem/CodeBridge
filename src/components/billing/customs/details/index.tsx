@@ -3,9 +3,11 @@ import Info from "./customs/info";
 import Inputs from "./customs/inputs";
 import type { BillingForm } from "@/types/billing";
 import { validationSchema } from "@/models/validation/billing";
+import { useDetailsFeatures } from "./features";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import { useNavigate } from "react-router-dom";
-import { useDetailsFeatures } from "./features";
+import { useBillingService } from "@/services/billing";
+import { useEffect } from "react";
 
 const Details = () => {
   const navigate = useNavigate();
@@ -13,6 +15,10 @@ const Details = () => {
   const {
     onSubmit: { mutateAsync: onSubmit }
   } = useDetailsFeatures();
+
+  const {
+    billing: { data: billing }
+  } = useBillingService();
 
   const formik = useFormik<BillingForm>({
     initialValues: {
@@ -23,7 +29,7 @@ const Details = () => {
       city: "",
       phone_number: "",
       email: "",
-      terms: "",
+      terms: false,
       payment: "bank"
     },
     onSubmit: (values) => {
@@ -35,7 +41,17 @@ const Details = () => {
     validationSchema
   });
 
-  console.log(formik.errors);
+  useEffect(() => {
+    if (billing) {
+      formik.setFieldValue("first_name", billing.first_name, false);
+      formik.setFieldValue("last_name", billing.last_name, false);
+      formik.setFieldValue("street_address", billing.street_address, false);
+      formik.setFieldValue("city", billing.city, false);
+      formik.setFieldValue("phone_number", billing.phone_number, false);
+      formik.setFieldValue("email", billing.email, false);
+      console.log(billing);
+    }
+  }, [billing]);
 
   return (
     <div>

@@ -1,6 +1,6 @@
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import type { BillingForm } from "@/types/billing";
 import type { useFormik } from "formik";
 import type { FC } from "react";
@@ -51,8 +51,8 @@ const Inputs: FC<InputsProps> = (props) => {
       <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="town_city">Town/City*</Label>
         <Input
-          {...formik.getFieldProps("townCity")}
-          id="city"
+          {...formik.getFieldProps("city")}
+          id="town_city"
           placeholder="Town City"
         />
       </div>

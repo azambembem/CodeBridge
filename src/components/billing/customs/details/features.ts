@@ -1,8 +1,13 @@
-import type { AxiosResponse, MutationResult } from "@/types";
+import { useAxios } from "@/hooks/useAxios";
+import { useReduxDishpatch, useReduxSelector } from "@/hooks/useRedux";
+import { setInitialState } from "@/redux/slices/wishlist";
+import { useBillingService } from "@/services/billing";
+import type {AxiosResponse, MutationResult } from "@/types";
 import type { BillingForm, TBilling } from "@/types/billing";
-import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
-import useAuthHeader from 'react-auth-kit/hooks/useAuthHeader';
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import type { AxiosError } from "axios";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export type ON_SUBMIT = MutationResult<BillingForm>
 
@@ -12,31 +17,63 @@ type DetailsFeatures = {
 }
 
 export const useDetailsFeatures = (): DetailsFeatures => {
-    const authHeader = useAuthHeader()
+    const axios = useAxios()
+    const navigate = useNavigate();
+    const dispatch = useReduxDishpatch()
+    const queryClient = useQueryClient();
+    const {products} = useReduxSelector(({wishlist})=> wishlist)
 
-    console.log(authHeader);
+    const {billing: {data:billing}} = useBillingService();
     
     const onSubmit: ON_SUBMIT  = useMutation({
         mutationFn: async (values) => {
-            const { data } = await axios.post<AxiosResponse<TBilling>
-          >(`${import.meta.env.VITE_MAIN_APP}/billing/`, values,
-
-            {
-                headers: {
-                    Authorization: authHeader
-
+          try {
+            if(billing) {
+                const { data } = await axios<TBilling>({
+                    url: `/billing`, 
+                    data: values,
+                method: "POST"
+            });
+              queryClient.setQueryData<TBilling>(["billing"], data.data);
+            } 
+             await axios<TBilling>({
+                url: "/purchase/init", 
+                method: "POST",
+                data: {
+                    billing_id: billing?._id,
+                    products: products.map((product)=> {
+                        return {
+                            product_id: product._id,
+                            quantity: product.quantity
+                        }
+    
+                    })
                 }
-            }
-          );
+            })
+    
+            toast("축가하합니다!", {
+                description: "성공적으로 등록되었습니다",
+              });
 
+              navigate("/");
 
-          console.log(data);
-          
-         
+              dispatch(setInitialState());
+      
+              
+            
+          } catch (error) {
+            const { response } = error as AxiosError<AxiosResponse>;
+
+            toast.error("오류가 발생했습니다", {
+                description: `${response?.data?.message}`,
+                
+              });
+            
+          }
         },
-    })
+    });
 
     return {
         onSubmit,
     };
-}
+};
