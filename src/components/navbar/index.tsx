@@ -95,7 +95,9 @@ const Navbar = () => {
                 <DropdownMenuContent>
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => navigate("/profile/my-profile")}
+                  >
                     <User />
                     Manage My Account
                   </DropdownMenuItem>
