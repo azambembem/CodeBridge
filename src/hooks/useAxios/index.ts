@@ -4,19 +4,19 @@ import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
 
 export const useAxios = () => {
-    const authHeader = useAuthHeader();
+	const authHeader = useAuthHeader();
 
-    return async<T>(
-        config: AxiosRequestConfig,
-    ): Promise<AxiosResponse<LocalResponse<T>>> => {
-        return await axios<LocalResponse<T>>({
-            ...config,
-            url: `${import.meta.env.VITE_MAIN_APP}${config.url}`,
-            headers: {
-                Authorization: authHeader,
-                ...config.headers,
-            },
-            
-        });
-    };
+	return async <T>(
+		config: AxiosRequestConfig,
+	): Promise<AxiosResponse<LocalResponse<T>>> => {
+		return await axios<LocalResponse<T>>({
+			...config,
+			url: `${import.meta.env.VITE_MAIN_APP}${config.url}`,
+			headers: {
+				Authorization: authHeader,
+				...config.headers,
+			},
+		});
+	};
 };
+

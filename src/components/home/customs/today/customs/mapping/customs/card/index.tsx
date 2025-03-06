@@ -1,5 +1,6 @@
-import { useReduxDishpatch } from "@/hooks/useRedux";
+import { useReduxDispatch } from "@/hooks/useRedux";
 import { addProduct } from "@/redux/slices/wishlist";
+import { useWishlistFeature } from "@/services/wishlist";
 import type { IProduct } from "@/types/home";
 import { Rate } from "antd";
 import { Eye, Heart } from "lucide-react";
@@ -18,7 +19,10 @@ const calculateDiscountRange = (product: IProduct): number => {
 
 const Card: FC<CardProps> = (props) => {
   const { product } = props;
-  const dispatch = useReduxDishpatch();
+  const dispatch = useReduxDispatch();
+  const { isToggled, onToggle } = useWishlistFeature();
+
+  const toggled = isToggled(product);
 
   return (
     <div className="h-[350px] w-full flex flex-col gap-4">
@@ -28,9 +32,16 @@ const Card: FC<CardProps> = (props) => {
           alt="example"
           className="w-[80%] h-[80%]"
         />
-        <div className="flex-col gap-2 absolute top-3 right-3 hidden group-hover:flex">
+        <div
+          onClick={() => onToggle(product)}
+          className="flex-col gap-2 absolute top-3 right-3 hidden group-hover:flex"
+        >
           <div className="h-[34px] w-[34px] rounded-full bg-white flex items-center justify-center cursor-pointer">
-            <Heart className="w-4 h-4 " />
+            <Heart
+              className="w-4 h-4"
+              fill={toggled ? "red" : undefined}
+              stroke={toggled ? "red" : undefined}
+            />
           </div>
           <div className="h-[34px] w-[34px] rounded-full bg-white flex items-center justify-center cursor-pointer">
             <Eye className="w-4 h-4 " />

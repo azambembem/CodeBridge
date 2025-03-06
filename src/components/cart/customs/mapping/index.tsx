@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { useReduxDishpatch, useReduxSelector } from "@/hooks/useRedux";
+import { useReduxDispatch, useReduxSelector } from "@/hooks/useRedux";
 import { InputNumber } from "antd";
 import { useNavigate } from "react-router-dom";
 import { setProduct } from "@/redux/slices/wishlist";
 
 const Mapping = () => {
   const navigate = useNavigate();
-  const dispatch = useReduxDishpatch();
+  const dispatch = useReduxDispatch();
   const { products } = useReduxSelector(({ wishlist }) => wishlist);
 
   return (

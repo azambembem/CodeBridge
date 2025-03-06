@@ -11,9 +11,11 @@ import Footer from "./components/footer";
 import { authed_route, unauthed_route } from "./utils/routes";
 import { Toaster } from "@/components/ui/sonner";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
+import { useWishlistCache } from "./services/wishlist";
 
 const App = () => {
   const isAuthenticated = useIsAuthenticated();
+  useWishlistCache();
 
   return (
     <div className="w-full">

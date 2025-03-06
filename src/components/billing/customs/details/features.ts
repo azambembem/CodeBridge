@@ -1,5 +1,5 @@
 import { useAxios } from "@/hooks/useAxios";
-import { useReduxDishpatch, useReduxSelector } from "@/hooks/useRedux";
+import { useReduxDispatch, useReduxSelector } from "@/hooks/useRedux";
 import { setInitialState } from "@/redux/slices/wishlist";
 import { useBillingService } from "@/services/billing";
 import type {AxiosResponse, MutationResult } from "@/types";
@@ -19,7 +19,7 @@ type DetailsFeatures = {
 export const useDetailsFeatures = (): DetailsFeatures => {
     const axios = useAxios()
     const navigate = useNavigate();
-    const dispatch = useReduxDishpatch()
+    const dispatch = useReduxDispatch()
     const queryClient = useQueryClient();
     const {products} = useReduxSelector(({wishlist})=> wishlist)
 

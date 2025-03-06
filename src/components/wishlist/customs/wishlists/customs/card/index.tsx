@@ -1,4 +1,4 @@
-import { useReduxDishpatch } from "@/hooks/useRedux";
+import { useReduxDispatch } from "@/hooks/useRedux";
 import { removeProduct } from "@/redux/slices/wishlist";
 import { calculateDiscountRange } from "@/tools";
 import type { IProduct } from "@/types/home";
@@ -12,7 +12,7 @@ type CardProps = {
 
 const Card: FC<CardProps> = (props) => {
   const { product } = props;
-  const dispatch = useReduxDishpatch();
+  const dispatch = useReduxDispatch();
 
   return (
     <div className="h-[350px] w-full flex flex-col gap-4">
