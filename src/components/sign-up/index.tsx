@@ -8,7 +8,7 @@ import type { SignUpForm } from "@/types/sign-up";
 import { signUpSchema } from "@/models/validation/sign-up";
 
 const SignUp = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // boshqa faylga click qilish uchun
   const {
     onSubmit: { mutateAsync: onSubmit }
   } = useSignUpFeatures();
@@ -64,7 +64,7 @@ const SignUp = () => {
             disabled={!(formik.dirty && formik.isValid) || formik.isSubmitting}
             className="mt-10 h-[56px] w-full bg-[#DB4444]"
           >
-            {formik.isSubmitting ? "Creating Account..." : "Creat Account"}
+            {formik.isSubmitting ? "Creating Account..." : "Create Account"}
             Create Account
           </Button>
 

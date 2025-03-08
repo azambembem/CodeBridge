@@ -10,4 +10,4 @@ export const signUpSchema = Yup.object({
     .min(8, "Password must be at least 8 characters"),
 });
 
-export type SignUpSchemaType = Yup.InferType<typeof signUpSchema>;
+// export type SignUpSchemaType = Yup.InferType<typeof signUpSchema>;

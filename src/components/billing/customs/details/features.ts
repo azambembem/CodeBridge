@@ -28,7 +28,7 @@ export const useDetailsFeatures = (): DetailsFeatures => {
     const onSubmit: ON_SUBMIT  = useMutation({
         mutationFn: async (values) => {
           try {
-            if(billing) {
+            if(!billing) {
                 const { data } = await axios<TBilling>({
                     url: `/billing`, 
                     data: values,

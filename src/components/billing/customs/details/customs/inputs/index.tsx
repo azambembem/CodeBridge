@@ -43,7 +43,7 @@ const Inputs: FC<InputsProps> = (props) => {
           Apartment, floor, etc. (optional)
         </Label>
         <Input
-          {...formik.getFieldProps("addational_address")}
+          {...formik.getFieldProps("additional_address")}
           id="additional_address"
           placeholder="Additional Information"
         />

@@ -21,7 +21,7 @@ export const authed_route = [
   },
   {
     path: "/wishlist",
-    element: <Wishlist />, // wishlist royxatdan utgan bulsa ham korinadi utmagan bulsa ham shuning uchun pastda ham bor
+    element: <Wishlist />, // wishlist royxatdan utgan bulsa ham korinadi utmagan bulsa ham shuning uchun pastda ham bor.
     id: v4()
   },
   {

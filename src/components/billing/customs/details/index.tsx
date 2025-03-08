@@ -41,6 +41,8 @@ const Details = () => {
     validationSchema
   });
 
+  console.log(formik.errors);
+
   useEffect(() => {
     if (billing) {
       formik.setFieldValue("first_name", billing.first_name, false);

@@ -111,11 +111,10 @@ const Info: FC<InfoProps> = (props) => {
           !(formik.dirty && formik.isValid && Boolean(products.length)) ||
           formik.isSubmitting
         }
-        variant={"destructive"}
         className="mt-8"
         type="submit"
       >
-        {formik.isSubmitting ? "Processing Order..." : "Place Order"}
+        {formik.isSubmitting ? "Processing..." : "Place Order"}
       </Button>
     </div>
   );
