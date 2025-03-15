@@ -1,5 +1,5 @@
 import type { AxiosResponse, MutationResult } from "@/types";
-import type { AuthSuccsessResponse, SignInForm } from "@/types/sign-in";
+import type { AuthSuccessResponse, SignInForm } from "@/types/sign-in";
 import { useMutation } from "@tanstack/react-query";
 import axios, {type AxiosError } from "axios";
 import { toast } from "sonner";
@@ -19,7 +19,7 @@ export const useSignInFeatures = (): SignInFeatures => {
     const onSubmit: ON_SUBMIT = useMutation({
       mutationFn: async (values) => {
         try {
-          const { data } = await axios.post <AxiosResponse<AuthSuccsessResponse>>(
+          const { data } = await axios.post <AxiosResponse<AuthSuccessResponse>>(
             `${import.meta.env.VITE_MAIN_APP}/auth/sign-in`,
              values
             );

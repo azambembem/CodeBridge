@@ -5,9 +5,11 @@ import Loading from "./loading";
 const Categories = () => {
   const {
     categories: { data: categories, isLoading, isError }
-  } = useHomeCache();
+  } = useHomeCache(); // faeture.ts ichidagi const ichidagi useHomeCachedan keliyapti
 
-  if (isLoading || isError) return <Loading />;
+  // birinchi categories feature.ts type HomeCache ichidagidan keliyapti
+
+  if (isLoading || isError) return <Loading />; // yani bizda categorylarni chaqirishdan oldin buladigan holat
 
   /*
   Yani biz pastda map qilish orqali bir nechta Buttonlarni 

@@ -6,7 +6,7 @@ export type SignUpForm = {
   password: string;
 };
 
-export type AuthSuccsessResponse = {
+export type AuthSuccessResponse = {
   token: string;
   user: TUser;
 };

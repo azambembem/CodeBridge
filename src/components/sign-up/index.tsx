@@ -14,6 +14,7 @@ const SignUp = () => {
   } = useSignUpFeatures();
 
   const formik = useFormik<SignUpForm>({
+    // SignUpForm buyerda types/sign-up ichida type berilgan holatda keliyapti.
     initialValues: {
       name: "",
       email: "",

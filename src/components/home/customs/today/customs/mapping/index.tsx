@@ -19,9 +19,14 @@ const Mapping = () => {
         <Card />
         <Card />
         <Card /> */}
-        {products?.slice(0, expand ? undefined : 5).map((product) => (
-          <Card key={product._id} product={product} />
-        ))}
+
+        {products?.slice(0, expand ? undefined : 5).map(
+          (
+            product // yani bu codeda 5ta chiqarib keyin yana beshta qoshib undan keyin view button yo'qolib qoladi.
+          ) => (
+            <Card key={product._id} product={product} /> // yani buyerda map qilish orqali <Card /> larni avtomatlashtirilgan
+          )
+        )}
       </div>
 
       {!expand && (

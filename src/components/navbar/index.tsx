@@ -14,7 +14,7 @@ import {
 import Discount from "./customs/warnings/discount";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser"; // react-auth-kit
+import useAuthUser from "react-auth-kit/hooks/useAuthUser"; // react-auth-kit userdan keliyapti
 import type { TUser } from "@/types/user";
 import useSignOut from "react-auth-kit/hooks/useSignOut"; // sign out qilsih uchun -> react-auth-kit
 import {
@@ -29,8 +29,9 @@ import { Badge } from "antd";
 import { useReduxSelector } from "@/hooks/useRedux";
 
 const Navbar = () => {
-  const user = useAuthUser<TUser>();
-  const signOut = useSignOut();
+  const user = useAuthUser<TUser>(); // user ustiga borsak bizga TUser yoki null ko'rsatadi.
+  // userni user. qilib korsak TUser ichidagi barcha malumotlarni korsatib beradi.
+  const signOut = useSignOut(); // signOut bizga react-auth kitdan keladi bizga yani signOut qilish uchun kerak bizga.
   const navigate = useNavigate();
   const isAuthenticated = useIsAuthenticated();
   const { products } = useReduxSelector(({ wishlist }) => wishlist);
@@ -79,13 +80,14 @@ const Navbar = () => {
               </Button>
             </Badge>
 
-            {isAuthenticated && (
+            {isAuthenticated && ( // isAuthenticated bulsagina AvatarImage chiqishi kerak.
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <Avatar>
                     <AvatarImage src={user?.profile_picture} />
                     <AvatarFallback>
                       {`${user?.first_name?.slice(
+                        // slice kesib oliyapti lekin nima maqsadda ishlatilyotgani aniqlash kerak??
                         0,
                         1
                       )} ${user?.last_name?.slice(0, 1)}`}
@@ -114,8 +116,8 @@ const Navbar = () => {
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={() => {
-                      signOut();
-                      window.location.assign("/");
+                      signOut(); // tepadagi signOut ni olib kelib buyerda Logout bosganda home page chiqarib tashlaydi.
+                      window.location.assign("/"); //
                     }}
                     className="text-red-500 hover:text-red-500"
                   >

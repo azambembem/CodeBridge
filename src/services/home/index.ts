@@ -9,17 +9,18 @@ type HomeCache = {
 };
 
 export const useHomeCache = (): HomeCache => {
-    const categories = useQuery({
-        queryKey: ["home/category"],
+    const categories = useQuery({ 
+        // useQuery API yoki backenddan kelgan ma'lumotlarni olishni osonlashtiradi va avtomatik ravishda qayta yuklash, keshlash va sinxronizatsiyani boshqaradi.
+        queryKey: ["home/category"], // qisqacha qilib aytganda qayerdagi qaysi qismi ekanligi tuishuntirib bersak buladi.
         queryFn: async () => {
             const { data } = await axios.get<AxiosResponse<ICategory[]>>
             (`${import.meta.env.VITE_MAIN_APP}/category`,
           );
-          return data?.data
+          return data?.data // ikkinchi data AxiosResponse ichidagi typedan keliyapti. ?
   
         },
     });
-    return {categories}      
+    return {categories}  // categories tepadagi categoriesdan keliyapti.
 }
 
 

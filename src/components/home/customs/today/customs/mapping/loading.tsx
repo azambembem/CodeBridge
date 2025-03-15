@@ -1,8 +1,8 @@
-import { useTodayCache } from "@/services/home";
+// import { useTodayCache } from "@/services/home";
 import CardLoading from "./customs/card/loading";
 
 const Loading = () => {
-  const {} = useTodayCache();
+  // const {} = useTodayCache();
   return (
     <div className="flex flex-col items-center mb-[60px]">
       <div className=" w-full mt-[40px] grid grid-cols-5 gap-6 max-2xl:grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 max-sm:grid-cols-1">

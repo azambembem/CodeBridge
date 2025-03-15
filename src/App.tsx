@@ -14,7 +14,7 @@ import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import { useWishlistCache } from "./services/wishlist";
 
 const App = () => {
-  const isAuthenticated = useIsAuthenticated();
+  const isAuthenticated = useIsAuthenticated(); // ruyxatdan utilgan bulganligi uchun
   useWishlistCache();
 
   return (
@@ -27,6 +27,7 @@ const App = () => {
             return <Route key={index} {...route} />; // yani biz buyerda map orqali ro'yxatdan  utmaganganlarni ishatdik.
           }
         )}
+
         {/* {authed_route.map((route) => {
           return <Route key={route.id} {...route} />; // yani biz buyerda map orqali ro'yxatdan utganlarni ishatdik.
         })} */}

@@ -1,4 +1,4 @@
-import { IProduct } from "@/types/home";
+import type{ IProduct } from "@/types/home";
 
 export const calculateDiscountRange = (product: IProduct): number => {
   const discount_percentage = product.discount / 100;

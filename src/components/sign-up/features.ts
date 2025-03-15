@@ -1,12 +1,14 @@
 import type{ AxiosResponse, MutationResult } from "@/types";
-import type{ AuthSuccsessResponse, SignUpForm } from "@/types/sign-up";
+import type{ AuthSuccessResponse, SignUpForm } from "@/types/sign-up";
 import { useMutation } from "@tanstack/react-query";
-import axios, {type AxiosError } from "axios";
+import axios, {type AxiosError } from "axios";  // api bn boglash
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import useSignIn from "react-auth-kit/hooks/useSignIn";
 
-type ON_SUBMIT = MutationResult<SignUpForm>;
+// type s = { age: number } 
+
+type ON_SUBMIT = MutationResult<SignUpForm>; // 
 
 type SignUpFeatures = {
   onSubmit: ON_SUBMIT;
@@ -19,10 +21,15 @@ export const useSignUpFeatures = (): SignUpFeatures => {
 
   const onSubmit: ON_SUBMIT = useMutation({
     mutationFn: async (values) => {
+      // input forkikdan oliyotgan malumotlar
+
+      
       try {
         const { data } = await axios.post<
-          AxiosResponse<AuthSuccsessResponse>
+          AxiosResponse<AuthSuccessResponse>
         >(`${import.meta.env.VITE_MAIN_APP}/auth/sign-up`, values);
+
+        
 
         signIn({
           userState: data?.data?.user,
