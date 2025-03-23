@@ -9,3 +9,7 @@ export type AxiosResponse<T = unknown>= {
 };
 
 export type QueryResult <T> =  UseQueryResult<T>;
+
+
+
+

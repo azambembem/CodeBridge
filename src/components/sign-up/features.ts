@@ -8,7 +8,7 @@ import useSignIn from "react-auth-kit/hooks/useSignIn";
 
 // type s = { age: number } 
 
-type ON_SUBMIT = MutationResult<SignUpForm>; // 
+type ON_SUBMIT = MutationResult<SignUpForm>; 
 
 type SignUpFeatures = {
   onSubmit: ON_SUBMIT;
@@ -25,9 +25,10 @@ export const useSignUpFeatures = (): SignUpFeatures => {
 
       
       try {
-        const { data } = await axios.post<
-          AxiosResponse<AuthSuccessResponse>
-        >(`${import.meta.env.VITE_MAIN_APP}/auth/sign-up`, values);
+        const { data } = await axios.post<AxiosResponse<AuthSuccessResponse>>(
+          `${import.meta.env.VITE_MAIN_APP}/auth/sign-up`,
+          values
+        );
 
         
 
