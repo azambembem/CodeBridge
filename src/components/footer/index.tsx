@@ -68,16 +68,23 @@ const Footer = () => {
             </p>
             <div className="flex gap-2">
               <img
-                src="https://s3-alpha-sig.figma.com/img/9913/87c0/5dd6d44594e01b675513068803e2426d?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=lEeT2i7TvRlCMIEx75QqFkd1VAHY7zAu0xYuKd~MLE5na9c~OsVxgrH-12uKHgESVPnYoQBG~QxLALnpZ9-baF0w0cM-nSFL9b8NEtskiPUl3lomWtjTBDfDZsdsLay36btKg56XnsVs0GwVzzdl45cj0BE8L2Zyfa1gVLU3JQkiK-CdYZaWxrDO-9Z5qXpyo-ST5A6hjtFkOFD-2CZFTIio5Rbu31qKlI6KolAy6~JWxrE3g-XqGJbkb0AaJm2oYBSCrUsusHO0br748JfQWWiFCrNULnzdMfiQrhUZ~yoheB8AxmxUVTasHXaHc-t0Jz1QVyyc0nkY4b2oyxL5JQ__"
+                src="https://www.qrcode-monkey.com/img/blog/qrcode-classic.png"
                 alt=""
-                className="w-[76px] h-[76px]"
+                className="w-[86px] h-[96px]"
               />
               <div className="flex flex-col gap-1">
                 <img
-                  src="https://s3-alpha-sig.figma.com/img/a61d/4c71/10b18ab55a1e1a07ebf54a46ebb07284?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=GlFnWLVyTZeQP3poqeFA8uqviLZCtZjCY8DxlL3UCtTLTi3v4NRVyqGezs6qT9CLDXJ0dSxdDL7DoGWAEILsvfu~-6yXUuQKU16pEF906osrjoY7unBlR6Qql4yGwmUjeM6CDcS-2b~KcLyJs7CBQ~zkjNgSD-egOqTYMgiDXnpcJ4FXyKaJjM6g-UeA2Gg8aYWZnnwHQRo0igrL5R7t3vLnYgZjh8gAhkLPvUkStYemyZ0dse2Dm9v5aVvMVJWCshFB7VNyuAkvTK6qAn98W5lkxNZJmCxq1GlTSDzLYcOznK-zlZ4aYolOfW3ywGs7ZHuOTGCV-Pj2WJDBB18LUg__"
+                  src="https://cdn.pixabay.com/photo/2021/09/22/16/07/google-play-6647242_640.png"
                   alt=""
-                  className="w-[104px]"
+                  className="w-[104px] h-[46px]  border-solid border-2 border-white"
                 />
+                <div className="flex flex-row gap-1">
+                  <img
+                    src="https://cdn.pixabay.com/photo/2021/09/22/16/07/google-play-6647242_640.png"
+                    alt=""
+                    className="w-[104px] h-[46px]  border-solid border-2 border-white"
+                  />
+                </div>
               </div>
             </div>
           </div>

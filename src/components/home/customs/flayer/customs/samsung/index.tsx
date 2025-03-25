@@ -4,10 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const Samsung = () => {
   return (
-    <CarouselItem
-      className="h-[344px] bg-[#c7c5c0] /* Bej rangi */
- flex items-center justify-between pl-[64px]"
-    >
+    <CarouselItem className="h-[344px] bg-[#c7c5c0] flex items-center justify-between pl-[64px]">
       <div>
         <div className="flex items-center gap-6">
           <img

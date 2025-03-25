@@ -32,7 +32,7 @@ const DiscountProduct = () => {
 
       <div className="flex-1 h-full flex bg-black items-center justify-center">
         <img
-          src="https://s3-alpha-sig.figma.com/img/3cc9/43ca/7e210f637fc0504b7d93cd207df744c2?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=XCVWETm1D8bi8-uLwodZ7ZHQpphWu57KKhsLoerSzhEF2-CS5D52867BadgeBPni88Qv~ov8eRGWA59Q18Hae3QhrQe53IWAtDFrFqd8CkpD32cnuqgtoGx5~dojvFQgw8XDilT5GwqvGHHK~ps3DkaQdm7gH~pLnFM8XWBNUfusL26PXcDOJZhd9OaYaAjh~JjWLybdqn4-8hyI-cK51tw3dKD2KIrkCOeNzq4PhRDpnECaWxRrhThN3kLofyw1ILDAbiPTX7xDr~KIPkmMyENadOjTuj9VjyGQswV4o4qjlV4c1Sqr7Bdr6GA4jJFL96yCXNfKlFGvc~1xcML66w__"
+          src="https://thumbs.dreamstime.com/b/jbl-boombox-speaker-black-background-bures-sur-yvette-france-april-th-portable-bluetooth-reflections-beautiful-highlight-p-217741316.jpg"
           alt=""
           className="w-full h-[330px]"
         />
