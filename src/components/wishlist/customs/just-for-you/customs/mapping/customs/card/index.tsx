@@ -12,7 +12,7 @@ type CardProps = {
 
 const Card: FC<CardProps> = (props) => {
   const { product } = props;
-  const dispatch = useReduxDispatch();
+  const dispatch = useReduxDispatch(); // Redux dispatch funksiyasini olish ??
 
   return (
     <div className="h-[350px] w-full flex flex-col gap-4">

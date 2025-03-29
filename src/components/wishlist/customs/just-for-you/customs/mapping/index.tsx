@@ -7,7 +7,7 @@ const Mapping = () => {
   const [expand, setExpand] = useState<boolean>(false);
   const {
     products: { isLoading, isError, data: products }
-  } = useTodayCache();
+  } = useTodayCache(); //  shu qismida tushuncha kerak
 
   if (isLoading || isError) return <Loading />;
 
@@ -19,14 +19,19 @@ const Mapping = () => {
         <Card />
         <Card />
         <Card /> */}
-        {products?.slice(0, expand ? undefined : 5).map((product) => (
-          <Card key={product._id} product={product} />
-        ))}
+        {products?.slice(0, expand ? undefined : 5).map(
+          // products? Bu optional chaining (?.) bo‘lib, products mavjud bo‘lsa, unga murojaat qiladi, aks holda xatolikni oldini oladi.
+          (
+            product //
+          ) => (
+            <Card key={product._id} product={product} /> // mana shu qismida tushunch kerak
+          )
+        )}
       </div>
 
-      {!expand && (
+      {!expand && ( // Agar expand false (!expand === true) bo‘lsa, div ko‘rsatiladi.
         <div
-          onClick={() => setExpand(true)}
+          onClick={() => setExpand(true)} // setExpand(true) → expand holatini true ga o‘zgartiradi.
           className="w-[234px] h-[56px] bg-[#db4444] rounded-md flex items-center justify-center cursor-pointer mt-[60px]"
         >
           <h3 className="text-[#fafafa] font-medium text-base">

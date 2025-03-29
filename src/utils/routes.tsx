@@ -84,7 +84,7 @@ export const unauthed_route = [
     id: v4()
   },
   {
-    path: "/wishlist",
+    path: "/wishlist", // wishlist uchun -> ruyxatdan utmagan holatda
     element: <Wishlist />,
     id: v4()
   },

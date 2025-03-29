@@ -1,7 +1,7 @@
 import type{ AxiosResponse, QueryResult } from "@/types";
 import type{ ICategory, IProduct } from "@/types/home";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import axios from "axios"; // axios bizga HTTP so'rovlarni qabul qilish uchun kerak
 
 
 type HomeCache = {

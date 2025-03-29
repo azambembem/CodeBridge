@@ -34,7 +34,7 @@ const Navbar = () => {
   const signOut = useSignOut(); // signOut bizga react-auth kitdan keladi bizga yani signOut qilish uchun kerak bizga.
   const navigate = useNavigate();
   const isAuthenticated = useIsAuthenticated();
-  const { products } = useReduxSelector(({ wishlist }) => wishlist);
+  const { products } = useReduxSelector(({ wishlist }) => wishlist); // Yani savatchaga nechta product add bulgani
 
   return (
     <div>

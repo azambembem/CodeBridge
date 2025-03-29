@@ -10,8 +10,8 @@ const initialState: TInitialState ={
 }
 
 export const wishlistSlice = createSlice({
-    name: "wishlist",
-    initialState,
+    name: "wishlist", // name unique bulishi kerak!
+    initialState, // boshlangich holat // useState boshlangich holat bn bixil deb tushunsa ham buladi
     reducers: {
         addProduct: (state, {payload}: {payload: IProduct}) => {
 
