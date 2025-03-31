@@ -49,7 +49,7 @@ const Mapping = () => {
                 dispatch(setProduct({ ...product, quantity: Number(value) }));
               }}
               min={0}
-              defaultValue={product.quantity}
+              defaultValue={product.quantity} // default value
             />
           </div>
           <div className="flex-1">

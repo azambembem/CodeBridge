@@ -13,7 +13,11 @@ const Header = () => {
           Wishlists {Boolean(products.length) && `${products.length}`}
         </h3>
       </div>
-      <Button onClick={() => navigate("/cart")} disabled={!products.length}>
+      <Button
+        variant={"destructive"}
+        onClick={() => navigate("/cart")}
+        disabled={!products.length}
+      >
         Move All to Bug
       </Button>
     </div>

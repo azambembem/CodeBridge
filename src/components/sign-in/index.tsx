@@ -24,8 +24,9 @@ const SignIn = () => {
     <div className="h-screen w-full flex items-center">
       <div className="w-[60%] h-full bg-[#cbe4eb]">
         <img
-          src="https://s3-alpha-sig.figma.com/img/75f3/94c0/a1c7dc5b68a42239311e510f54d8cd59?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=t8wZHsu4t6sGNRdp2hgNCK-cXVlo~fej8Sdy0iSiC~D6BiHQRn9qjOYV3lC~nE1De9jnl1Pu095mw5rEzp5XWlbk8Tx19uwLGDZ1VSmq-GouE8aVcN2XzrKcx8~45HTfIYh7oCd23~kM-6FSBWy1FyDwXxSfQQ0bH05tIEST6KSrtqldRsZequVOhDprGo0YElOaW9z3YwZzC4l7XPRvNveG-UlHzbNQyp8H3M89yPcGqGh7u~tDPGdZ1z49WiEYwbwgqInrjfb-AJL9SkkqKDTJH8TsgFxL-4W7XLim9cldWC3vsFy-GMiC0cHJyKQQEk2dkdFumix~chKrppmejA__"
+          src="https://static.vecteezy.com/system/resources/previews/001/982/181/non_2x/young-man-with-shopping-cart-vector.jpg"
           alt=""
+          className="h-full w-full"
         />
       </div>
       <div className="w-[40%] h-full flex items-center justify-center">
