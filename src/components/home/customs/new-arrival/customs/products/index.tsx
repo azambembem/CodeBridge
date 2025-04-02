@@ -140,7 +140,9 @@ const Products = () => {
             />
             <div className="absolute bottom-8 left-8 flex flex-col items-start gap-4 w-[242px]">
               <h3 className="text-base font-semibold text-white">Perfume</h3>
-              <h3 className="text-sm text-white">GUCCI INTENSE OUD EDP</h3>
+              <h3 className="text-sm font-semibold text-white">
+                GUCCI INTENSE OUD EDP
+              </h3>
               <Button variant={"link"} className="text-white pl-0">
                 Shop Now
               </Button>

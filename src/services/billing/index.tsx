@@ -23,7 +23,7 @@ export const useBillingService = (): BillingService => {
 
       return data.data;
     },
-    enabled: Boolean(user)
+    enabled: Boolean(user) // ?
   });
 
   return {

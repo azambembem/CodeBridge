@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import type { BillingForm } from "@/types/billing";
 import type { useFormik } from "formik";
-import type { FC } from "react";
+import type { FC } from "react"; // ?
 
 type InputsProps = {
   formik: ReturnType<typeof useFormik<BillingForm>>;
@@ -17,7 +17,7 @@ const Inputs: FC<InputsProps> = (props) => {
       <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="first_name">First Name</Label>
         <Input
-          {...formik.getFieldProps("first_name")}
+          {...formik.getFieldProps("first_name")} // ?
           id="first_name"
           placeholder="First Name"
         />

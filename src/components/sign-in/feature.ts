@@ -16,14 +16,15 @@ export const useSignInFeatures = (): SignInFeatures => {
     
     const navigate = useNavigate();
   
-    const onSubmit: ON_SUBMIT = useMutation({
+    const onSubmit: ON_SUBMIT = useMutation({ // ON_SUBMITni buyerda ishlatishdan maqsad SignInForm da berilgan type buyerda ham tegishli degani
       mutationFn: async (values) => {
         try {
-          const { data } = await axios.post <AxiosResponse<AuthSuccessResponse>>(
+          const { data } = await axios.post <AxiosResponse<AuthSuccessResponse>>( // AxiosResponse<AuthSuccessResponse>> shu linedagi { data } ga borib taqaliyapti.
             `${import.meta.env.VITE_MAIN_APP}/auth/sign-in`,
-             values
-            );
-  
+            values,
+          
+          );
+
           signIn({
             userState: data?.data?.user,
             auth: {

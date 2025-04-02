@@ -13,7 +13,7 @@ const Details = () => {
   const navigate = useNavigate();
   const isAuthenticated = useIsAuthenticated();
   const {
-    onSubmit: { mutateAsync: onSubmit }
+    onSubmit: { mutateAsync: onSubmit } //
   } = useDetailsFeatures();
 
   const {

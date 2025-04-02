@@ -4,19 +4,20 @@ import { Input } from "../ui/input";
 import { useFormik } from "formik";
 import { useSignInFeatures } from "./feature";
 import { validationSchema } from "@/models/validation/sign-in";
+import { SignInForm } from "@/types/sign-in";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const {
-    onSubmit: { mutateAsync: onSubmit }
+    onSubmit: { mutateAsync: onSignIn }
   } = useSignInFeatures();
 
-  const formik = useFormik({
+  const formik = useFormik<SignInForm>({
     initialValues: {
       email: "",
       password: ""
     },
-    onSubmit: async (values) => await onSubmit(values),
+    onSubmit: async (values) => await onSignIn(values), // onSubmit yonidagi (values) <SignInForm> ga teng buliyapti.
     validationSchema
   });
 

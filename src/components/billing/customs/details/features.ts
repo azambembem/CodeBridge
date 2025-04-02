@@ -9,7 +9,7 @@ import type { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-export type ON_SUBMIT = MutationResult<BillingForm>
+type ON_SUBMIT = MutationResult<BillingForm>
 
 type DetailsFeatures = {
     onSubmit: ON_SUBMIT; 
@@ -23,7 +23,7 @@ export const useDetailsFeatures = (): DetailsFeatures => {
     const queryClient = useQueryClient();
     const {products} = useReduxSelector(({wishlist})=> wishlist)
 
-    const {billing: {data:billing}} = useBillingService();
+    const {billing: {data:billing}} = useBillingService(); // ?
     
     const onSubmit: ON_SUBMIT  = useMutation({
         mutationFn: async (values) => {
@@ -31,10 +31,10 @@ export const useDetailsFeatures = (): DetailsFeatures => {
             if(!billing) {
                 const { data } = await axios<TBilling>({
                     url: `/billing`, 
-                    data: values,
-                method: "POST"
+                    data: values, // ?
+                method: "POST" //
             });
-              queryClient.setQueryData<TBilling>(["billing"], data.data);
+              queryClient.setQueryData<TBilling>(["billing"], data.data); // ?
             } 
              await axios<TBilling>({
                 url: "/purchase/init", 
@@ -57,7 +57,7 @@ export const useDetailsFeatures = (): DetailsFeatures => {
 
               navigate("/");
 
-              dispatch(setInitialState());
+              dispatch(setInitialState()); // ?
       
               
             
