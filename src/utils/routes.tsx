@@ -11,6 +11,9 @@ import SignUp from "@/pages/sign-up";
 import Wishlist from "@/pages/wishlist";
 import { v4 } from "uuid";
 import ProfileWishlist from "@/pages/profile/wishlist";
+// import Product from "@/components/product";
+import NotFound from "@/pages/404";
+import Product from "@/components/product";
 
 // authed_route ro'yxatdan o'tilgan routelar
 export const authed_route = [
@@ -63,6 +66,16 @@ export const authed_route = [
     path: "/profile/wishlist",
     element: <ProfileWishlist />,
     id: v4()
+  },
+  {
+    path: "/product/:product_id",
+    element: <Product />,
+    id: v4()
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+    id: v4()
   }
 ]; //
 
@@ -96,6 +109,16 @@ export const unauthed_route = [
   {
     path: "/billing",
     element: <Billing />,
+    id: v4()
+  },
+  {
+    path: "/product/:product_id",
+    element: <Product />,
+    id: v4()
+  },
+  {
+    path: "*",
+    element: <NotFound />,
     id: v4()
   }
 ];

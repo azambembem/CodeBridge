@@ -1,23 +1,7 @@
-// const Body = () => {
-//   return <div className="flex-1">Body</div>;
-// };
-
-// export default Body;
-
-import { usePaymentOptionsCache } from "@/services/payment-options";
 import Header from "./customs/header";
-import Card from "./customs/card";
-import Loading from "./loading";
+import CardLoading from "./customs/card/loading";
 
-const Body = () => {
-  const {
-    payment_options: { data: payment_options, isLoading, isError }
-  } = usePaymentOptionsCache();
-
-  if (isLoading || isError) {
-    return <Loading />;
-  }
-
+const Loading = () => {
   return (
     <div className="flex-1">
       <Header />
@@ -39,13 +23,13 @@ const Body = () => {
         </div>
 
         <div className="flex flex-col gap-4 mt-4">
-          {payment_options?.map((payment_option) => (
-            <Card key={payment_option._id} {...payment_option} />
-          ))}
+          <CardLoading />
+          <CardLoading />
+          <CardLoading />
         </div>
       </div>
     </div>
   );
 };
 
-export default Body;
+export default Loading;

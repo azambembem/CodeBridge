@@ -1,22 +1,6 @@
-// const Body = () => {
-//   return <div className="flex-1">Body</div>;
-// };
+import CardLoading from "./customs/card/loading";
 
-// export default Body;
-
-import { usePurchaseCache } from "@/services/purchase";
-import Card from "./customs/card";
-import Loading from "./loading";
-
-const Body = () => {
-  const {
-    purchase: { data: purchase, isLoading, isError }
-  } = usePurchaseCache();
-
-  if (isLoading || isError) {
-    return <Loading />;
-  }
-
+const Loading = () => {
   return (
     <div className="flex-1">
       <h1 className="text-[#DB4444] text-base font-semibold">Orders</h1>
@@ -35,13 +19,13 @@ const Body = () => {
         </div>
 
         <div className="flex flex-col gap-4 mt-4">
-          {purchase?.map((purchase) => (
-            <Card key={purchase?._id} {...purchase} />
-          ))}
+          <CardLoading />
+          <CardLoading />
+          <CardLoading />
         </div>
       </div>
     </div>
   );
 };
 
-export default Body;
+export default Loading;

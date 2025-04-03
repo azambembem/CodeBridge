@@ -13,7 +13,7 @@ export const wishlistSlice = createSlice({
     name: "wishlist", // name unique bulishi kerak!
     initialState, // boshlangich holat // useState boshlangich holat bn bixil deb tushunsa ham buladi
     reducers: {
-        addProduct: (state, {payload}: {payload: IProduct}) => {
+        addProduct: (state, {payload}: {payload: IProduct & {quantity?: number}}) => {
 
             const foundProduct = state.products.find(({_id}) => _id === payload._id);
 

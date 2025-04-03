@@ -10,7 +10,7 @@ export type IProduct = {
     hashtags: string[];
     _id: string;
     name: string;
-    category: null;
+    category: null | ICategory;
     star: number;
     price: number;
     discount: number;
