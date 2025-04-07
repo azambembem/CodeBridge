@@ -14,6 +14,7 @@ import ProfileWishlist from "@/pages/profile/wishlist";
 // import Product from "@/components/product";
 import NotFound from "@/pages/404";
 import Product from "@/components/product";
+import About from "@/components/about";
 
 // authed_route ro'yxatdan o'tilgan routelar
 export const authed_route = [
@@ -73,6 +74,11 @@ export const authed_route = [
     id: v4()
   },
   {
+    path: "/about",
+    element: <About />,
+    id: v4()
+  },
+  {
     path: "*",
     element: <NotFound />,
     id: v4()
@@ -114,6 +120,11 @@ export const unauthed_route = [
   {
     path: "/product/:product_id",
     element: <Product />,
+    id: v4()
+  },
+  {
+    path: "/about",
+    element: <About />,
     id: v4()
   },
   {
