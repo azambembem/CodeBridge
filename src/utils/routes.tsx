@@ -15,6 +15,7 @@ import ProfileWishlist from "@/pages/profile/wishlist";
 import NotFound from "@/pages/404";
 import Product from "@/components/product";
 import About from "@/components/about";
+import Contact from "@/pages/contact";
 
 // authed_route ro'yxatdan o'tilgan routelar
 export const authed_route = [
@@ -79,6 +80,11 @@ export const authed_route = [
     id: v4()
   },
   {
+    path: "/contact",
+    element: <Contact />,
+    id: v4()
+  },
+  {
     path: "*",
     element: <NotFound />,
     id: v4()
@@ -125,6 +131,11 @@ export const unauthed_route = [
   {
     path: "/about",
     element: <About />,
+    id: v4()
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
     id: v4()
   },
   {
