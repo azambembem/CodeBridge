@@ -1,6 +1,8 @@
 import OurStory from "@/components/about/customs/our-story";
 import Icons from "@/components/about/customs/icons";
 import Service from "@/components/about/customs/service";
+import PersonImages from "@/components/about/customs/person-images";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -28,6 +30,7 @@ const About = () => {
       </div>
       <OurStory />
       <Icons />
+      <PersonImages />
       <Service />
     </div>
   );
