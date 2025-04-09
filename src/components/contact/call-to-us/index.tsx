@@ -1,4 +1,3 @@
-// export default CallToUs;
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,7 +36,6 @@ const CallToUs = () => {
 
   return (
     <div className="w-[90%] m-auto flex flex-col lg:flex-row gap-12">
-      {/* 왼쪽: 연락처 섹션 */}
       <div className="flex-1">
         <div className="mb-6">
           <div className="flex flex-col gap-4">
@@ -98,8 +96,6 @@ const CallToUs = () => {
           </div>
         </div>
       </div>
-
-      {/* 오른쪽: 폼 섹션 */}
       <div className="flex-1">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row gap-4 mt-8">
