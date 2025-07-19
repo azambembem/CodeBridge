@@ -73,6 +73,9 @@ const SignUp = () => {
           <Button
             className="mt-10 h-[56px] w-full bg-white text-black "
             variant={"outline"}
+            onClick={() =>
+              (window.location.href = "http://localhost:5000/auth/google")
+            }
           >
             <GoogleOutlined />
             Sign up with Google

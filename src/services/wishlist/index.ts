@@ -27,7 +27,7 @@ export const useWishlistCache = (): WishlistCache => {
                 url: "/wishlists",
             })
 
-            return data.data;
+			return data.data ?? [];
         },
         enabled: Boolean(isAuthenticated),
     

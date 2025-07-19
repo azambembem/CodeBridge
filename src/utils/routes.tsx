@@ -2,7 +2,6 @@ import Billing from "@/pages/billing";
 import Cart from "@/pages/cart";
 import Home from "@/pages/home";
 import AddressBook from "@/pages/profile/address-book";
-import Cancellations from "@/pages/profile/cancellations";
 import MyProfile from "@/pages/profile/my-profile";
 import PaymentOptions from "@/pages/profile/payment-options";
 import Returns from "@/pages/profile/returns";
@@ -16,6 +15,7 @@ import NotFound from "@/pages/404";
 import Product from "@/components/product";
 import About from "@/components/about";
 import Contact from "@/pages/contact";
+import Orders from "@/pages/profile/orders";
 
 // authed_route ro'yxatdan o'tilgan routelar
 export const authed_route = [
@@ -55,13 +55,13 @@ export const authed_route = [
     id: v4()
   },
   {
-    path: "/profile/returns",
-    element: <Returns />,
+    path: "/profile/orders",
+    element: <Orders />,
     id: v4()
   },
   {
-    path: "/profile/cancellations",
-    element: <Cancellations />,
+    path: "/profile/returns",
+    element: <Returns />,
     id: v4()
   },
   {
@@ -69,6 +69,7 @@ export const authed_route = [
     element: <ProfileWishlist />,
     id: v4()
   },
+
   {
     path: "/product/:product_id",
     element: <Product />,

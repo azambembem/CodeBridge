@@ -1,11 +1,11 @@
 import { useAxios } from "@/hooks/useAxios";
 import type { QueryResult } from "@/types";
-import type { IProduct } from "@/types/home";
+import type { ICategory, IProduct } from "@/types/home";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 
 type ProductCache = {
-	product: QueryResult<IProduct>;
+	product: QueryResult<IProduct & {category: ICategory }>;
 };
 
 export const useProductCache = (): ProductCache => {
@@ -13,11 +13,11 @@ export const useProductCache = (): ProductCache => {
 	const { product_id } = useParams();
 
 	const product = useQuery({
-		queryKey: [`product/${product_id}`],
+		queryKey: [`products/${product_id}`],
 		queryFn: async () => {
-			const { data } = await axios<IProduct >({
+			const { data } = await axios<IProduct & {category: ICategory } >({
 				method: "GET",
-				url: `/product/${product_id}`,
+				url: `/products/${product_id}`,
 			});
 
 			return data?.data;

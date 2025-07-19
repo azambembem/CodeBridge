@@ -5,6 +5,7 @@ import type { IProduct } from "@/types/home";
 import { Rate } from "antd";
 import { Eye, Heart } from "lucide-react";
 import type { FC } from "react";
+import { useNavigate } from "react-router-dom";
 
 type CardProps = {
   product: IProduct;
@@ -20,6 +21,7 @@ const calculateDiscountRange = (product: IProduct): number => {
 const Card: FC<CardProps> = (props) => {
   const { product } = props;
   const dispatch = useReduxDispatch();
+  const navigate = useNavigate();
   const { isToggled, onToggle } = useWishlistFeature();
 
   const toggled = isToggled(product);
@@ -43,7 +45,10 @@ const Card: FC<CardProps> = (props) => {
               stroke={toggled ? "red" : undefined}
             />
           </div>
-          <div className="h-[34px] w-[34px] rounded-full bg-white flex items-center justify-center cursor-pointer">
+          <div
+            onClick={() => navigate(`/product/${product._id}`)}
+            className="h-[34px] w-[34px] rounded-full bg-white flex items-center justify-center cursor-pointer"
+          >
             <Eye className="w-4 h-4 " />
           </div>
         </div>

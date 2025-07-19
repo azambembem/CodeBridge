@@ -4,6 +4,7 @@ import { Rate } from "antd";
 import { Eye, Heart } from "lucide-react";
 import type { FC } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 type CardProps = {
   product: IProduct;
@@ -19,6 +20,7 @@ const calculateDiscountRange = (product: IProduct): number => {
 const Card: FC<CardProps> = (props) => {
   const { product } = props;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="h-[350px] w-full flex flex-col gap-4">
@@ -32,7 +34,10 @@ const Card: FC<CardProps> = (props) => {
           <div className="h-[34px] w-[34px] rounded-full bg-white flex items-center justify-center cursor-pointer">
             <Heart className="w-4 h-4 " />
           </div>
-          <div className="h-[34px] w-[34px] rounded-full bg-white flex items-center justify-center cursor-pointer">
+          <div
+            onClick={() => navigate(`/product/${product._id}`)}
+            className="h-[34px] w-[34px] rounded-full bg-white flex items-center justify-center cursor-pointer"
+          >
             <Eye className="w-4 h-4 " />
           </div>
         </div>
