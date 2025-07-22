@@ -45,7 +45,7 @@ const Navbar = () => {
             <Button
               variant="link"
               onClick={() => navigate("/")}
-              className="text-2xl font-bold cursor-pointer"
+              className="text-2xl font-light cursor-pointer"
             >
               Exclusive
             </Button>
