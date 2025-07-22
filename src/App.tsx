@@ -12,6 +12,7 @@ import { authed_route, unauthed_route } from "./utils/routes";
 import { Toaster } from "@/components/ui/sonner";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import { useWishlistCache } from "./services/wishlist";
+import OAuthSuccess from "./components/sign-up/oauth-success";
 
 const App = () => {
   const isAuthenticated = useIsAuthenticated(); // ruyxatdan utilgan bulganligi uchun
@@ -34,6 +35,7 @@ const App = () => {
         {/* <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} /> */}
+        <Route path="/oauth-success" element={<OAuthSuccess />} />
       </Routes>
       <Footer />
     </div>

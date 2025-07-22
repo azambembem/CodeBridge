@@ -82,7 +82,7 @@ const Navbar = () => {
 
             {isAuthenticated && ( // isAuthenticated bulsagina AvatarImage chiqishi kerak.
               <DropdownMenu>
-                <DropdownMenuTrigger>
+                {/* <DropdownMenuTrigger>
                   <Avatar>
                     <AvatarImage src={user?.profile_picture} />
                     <AvatarFallback>
@@ -93,7 +93,24 @@ const Navbar = () => {
                       )} ${user?.last_name?.slice(0, 1)}`}
                     </AvatarFallback>
                   </Avatar>
+                </DropdownMenuTrigger> */}
+                <DropdownMenuTrigger>
+                  {user?.profile_picture ? (
+                    <Avatar>
+                      <AvatarImage src={user.profile_picture} />
+                      <AvatarFallback>
+                        {`${user?.first_name?.slice(0, 1) ?? "U"}${
+                          user?.last_name?.slice(0, 1) ?? "N"
+                        }`}
+                      </AvatarFallback>
+                    </Avatar>
+                  ) : (
+                    <Button variant="ghost" size="icon">
+                      <User className="w-5 h-5 " />
+                    </Button>
+                  )}
                 </DropdownMenuTrigger>
+
                 <DropdownMenuContent>
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
