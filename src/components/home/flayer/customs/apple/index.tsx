@@ -1,34 +1,102 @@
-import { Button } from "@/components/ui/button";
+// import { CarouselItem } from "@/components/ui/carousel";
+
+// const Apple = () => {
+//   return (
+//     <CarouselItem className="h-[688px] bg-black flex items-center justify-center">
+//       <div>
+//         <img
+//           className="w-[1428px] h-[690px] object-cover inset-0"
+//           src="https://static.wixstatic.com/media/3a360e_c94b7781bbb94afe9ba063ae24bef8b8~mv2.jpg/v1/fill/w_974,h_510,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/full-stack-developer-training-course.jpg"
+//           alt=""
+//         />
+//       </div>
+//     </CarouselItem>
+//   );
+// };
+
+// export default Apple;
+
+
 import { CarouselItem } from "@/components/ui/carousel";
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  FaPython,
+  FaJsSquare,
+  FaPhp,
+  FaJava,
+  FaCss3Alt,
+  FaHtml5
+} from "react-icons/fa";
+import { SiMysql, SiRuby, SiCplusplus, SiPerl } from "react-icons/si";
 
 const Apple = () => {
   return (
-    <CarouselItem className="h-[344px] bg-black flex items-center justify-between pl-[64px]">
-      <div>
-        <div className="flex items-center gap-6">
-          <img
-            src="data:image/png;base64,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"
-            alt="apple-icon"
-            className="w-10 h-10"
-          />
-          <h3 className="text-base text-white">iPhone 14 Series</h3>
-        </div>
-        <h3 className="text-[48px] leading-[60px] text-white font-semibold">
-          Up to 10% <br />
-          off Voucher
-        </h3>
-        <div className="flex items-center gap-2">
-          <Button variant="link" className="text-white">
-            Shop Now <ArrowRight />
-          </Button>
-        </div>
+    <CarouselItem className="h-[688px] bg-gradient-to-r from-[#e0eafc] to-[#cfdef3] flex items-center justify-center">
+      <div className="max-w-6xl w-full p-4 flex flex-col md:flex-row items-center md:justify-between gap-8">
+        {/* Text Section */}
+        <motion.div
+          className="flex-1 text-center md:text-left"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <h1 className="text-3xl md:text-5xl font-bold text-[#4b2e83] mb-4">
+            Full Stack
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700">
+            Developer Training & Certification
+          </p>
+        </motion.div>
+
+        {/* Icons Section */}
+        <motion.div
+          className="flex-1 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 gap-6 justify-items-center"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="flex flex-col items-center">
+            <FaPython className="text-4xl md:text-5xl text-[#3776AB]" />
+            <span className="mt-2 text-sm md:text-base">Python</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <FaJsSquare className="text-4xl md:text-5xl text-[#F7DF1E]" />
+            <span className="mt-2 text-sm md:text-base">JS</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <FaPhp className="text-4xl md:text-5xl text-[#777BB4]" />
+            <span className="mt-2 text-sm md:text-base">PHP</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <FaJava className="text-4xl md:text-5xl text-[#007396]" />
+            <span className="mt-2 text-sm md:text-base">Java</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <FaCss3Alt className="text-4xl md:text-5xl text-[#264de4]" />
+            <span className="mt-2 text-sm md:text-base">CSS</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <FaHtml5 className="text-4xl md:text-5xl text-[#E44D26]" />
+            <span className="mt-2 text-sm md:text-base">HTML</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiMysql className="text-4xl md:text-5xl text-[#00758F]" />
+            <span className="mt-2 text-sm md:text-base">MySQL</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiRuby className="text-4xl md:text-5xl text-[#CC342D]" />
+            <span className="mt-2 text-sm md:text-base">Ruby</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiCplusplus className="text-4xl md:text-5xl text-[#00599C]" />
+            <span className="mt-2 text-sm md:text-base">C++</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiPerl className="text-4xl md:text-5xl text-[#39457E]" />
+            <span className="mt-2 text-sm md:text-base">Perl</span>
+          </div>
+        </motion.div>
       </div>
-      <img
-        src="https://cdn.xingosoftware.com/techfi/images/fetch/dpr_1,w_658/https%3A%2F%2Ftechfi.nl%2Fassets%2Fupload%2Fimg%2Fpublic%2Foriginal%2Fapple-iphone-14-pro-iphone-14-pro-max-hero-220907.jpg"
-        alt="Apple"
-        className="w-[496px] h-full"
-      />
     </CarouselItem>
   );
 };

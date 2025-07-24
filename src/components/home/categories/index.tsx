@@ -17,7 +17,7 @@ const Categories = () => {
 */
 
   return (
-    <div className="w-[217px] h-[344px] flex flex-col gap-4 overflow-y-auto mt-10">
+    <div className="w-[217px] h-[644px] flex flex-col gap-4 overflow-y-auto mt-10">
       {/* {categories?.map((category) => (
         <Button variant={"link"} key={category._id}>
           <h3 className="w-full text-start">{category.name}</h3>
@@ -44,6 +44,18 @@ const Categories = () => {
       </Button>
       <Button variant={"link"}>
         <h3 className="w-full text-start">Baby’s & Toys</h3>
+      </Button>
+      <Button variant={"link"}>
+        <h3 className="w-full text-start">Groceries & Pets</h3>
+      </Button>
+      <Button variant={"link"}>
+        <h3 className="w-full text-start">Health & Beauty</h3>
+      </Button>
+      <Button variant={"link"}>
+        <h3 className="w-full text-start">Groceries & Pets</h3>
+      </Button>
+      <Button variant={"link"}>
+        <h3 className="w-full text-start">Health & Beauty</h3>
       </Button>
       <Button variant={"link"}>
         <h3 className="w-full text-start">Groceries & Pets</h3>
