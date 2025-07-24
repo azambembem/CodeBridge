@@ -1,14 +1,29 @@
-import Categories from "./categories";
-import Flayer from "./flayer";
+import { useEffect } from "react";
+
+import { useLocation, useNavigate } from "react-router-dom";
+import Flayer from "./customs/flayer";
 
 const Home = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  // scroll uchu yangi qo'shilgan qismi. Yani boshqa pagelardan turib scroll qilganda home page kelib homepagedan avtomatic 문의하기 scroll bolish.
+  useEffect(() => {
+    const scrollToId = location.state?.scrollTo;
+    if (scrollToId) {
+      setTimeout(() => {
+        const el = document.getElementById(scrollToId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        // state 초기화해서 새로고침 시 반복 방지
+        navigate(location.pathname, { replace: true, state: {} });
+      }, 300); // 렌더 완료를 위한 지연
+    }
+  }, [location, navigate]);
+
   return (
-    <div className="bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E]">
-      <div className="flex gap-[64px] h-[884px] w-[90%] m-auto">
-        <Categories />
-        <div className="h-full border-r border-solid" />
-        <Flayer />
-      </div>
+    <div>
+      <Flayer />
     </div>
   );
 };
