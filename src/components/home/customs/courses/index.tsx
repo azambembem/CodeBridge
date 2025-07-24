@@ -18,24 +18,55 @@ const Courses = () => {
   const solutions = [
     {
       id: "fitc",
-      title: "FitC",
-      subtitle: "AI 지능 최적 설계 소프트웨어",
+      title: "Frontend 입문",
+      subtitle: "코딩 기초부터 웹 페이지 제작까지",
       description:
-        "인공지능으로 설계 아이템을 자동 최적 배치하여법규와 조건을 만족하는 도면을 비교하고 생성합니다.",
-      image: "/imgs/FitC.svg",
+        "실제 웹 페이지를 만들면서 HTML, CSS, JavaScript의 기초를 쉽고 재미있게 배울 수 있는 강의입니다.",
+      image:
+        "https://codedamn-blog.s3.amazonaws.com/wp-content/uploads/2021/07/24141202/fullstack-web-developer-p9tzmk.png",
       buttons: [
-        { text: "자세히 보기", variant: "primary" },
+        { text: "수강 신청", variant: "primary" },
         { text: "문의하기", variant: "secondary" }
       ]
     },
     {
-      id: "fitp",
-      title: "FitP",
-      subtitle: "PDF 기반 법규 검토 서비스",
+      id: "fitc",
+      title: "Frontend 입문",
+      subtitle: "코딩 기초부터 웹 페이지 제작까지",
       description:
-        "설계 도면의 법적 준수 여부를 PDF 기반으로 검토하는 서비스를 제공합니다.",
-      image: "/imgs/FitP.svg",
-      buttons: [{ text: "문의하기", variant: "secondary" }]
+        "실제 웹 페이지를 만들면서 HTML, CSS, JavaScript의 기초를 쉽고 재미있게 배울 수 있는 강의입니다.",
+      image:
+        "https://codedamn-blog.s3.amazonaws.com/wp-content/uploads/2021/07/24141202/fullstack-web-developer-p9tzmk.png",
+      buttons: [
+        { text: "수강 신청", variant: "primary" },
+        { text: "문의하기", variant: "secondary" }
+      ]
+    },
+    {
+      id: "fitc",
+      title: "Frontend 입문",
+      subtitle: "코딩 기초부터 웹 페이지 제작까지",
+      description:
+        "실제 웹 페이지를 만들면서 HTML, CSS, JavaScript의 기초를 쉽고 재미있게 배울 수 있는 강의입니다.",
+      image:
+        "https://codedamn-blog.s3.amazonaws.com/wp-content/uploads/2021/07/24141202/fullstack-web-developer-p9tzmk.png",
+      buttons: [
+        { text: "수강 신청", variant: "primary" },
+        { text: "문의하기", variant: "secondary" }
+      ]
+    },
+    {
+      id: "fitc",
+      title: "Frontend 입문",
+      subtitle: "코딩 기초부터 웹 페이지 제작까지",
+      description:
+        "실제 웹 페이지를 만들면서 HTML, CSS, JavaScript의 기초를 쉽고 재미있게 배울 수 있는 강의입니다.",
+      image:
+        "https://codedamn-blog.s3.amazonaws.com/wp-content/uploads/2021/07/24141202/fullstack-web-developer-p9tzmk.png",
+      buttons: [
+        { text: "수강 신청", variant: "primary" },
+        { text: "문의하기", variant: "secondary" }
+      ]
     }
   ];
 
@@ -44,7 +75,7 @@ const Courses = () => {
       <div className="w-full max-w-none mx-auto text-center">
         {/* Main Title */}
         <h2 className="text-[#EEEEEE] mb-16 md:mb-20 leading-relaxed px-4 text-[18px] md:text-[20px] lg:text-[28px] font-semibold">
-          ToFit의 솔루션을 확인하세요
+          CodeBridge의 인기 코스를 확인하세요
         </h2>
 
         {/* Desktop: Fixed Width Boxes */}
