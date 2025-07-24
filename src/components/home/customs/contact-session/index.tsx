@@ -62,7 +62,7 @@ const ContactSession = () => {
   return (
     <div
       id="contact-heading"
-      className="w-full min-h-screen bg-[#262626] py-12 px-4 flex justify-center items-start md:items-center"
+      className="w-full min-h-screen  bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E] py-12 px-4 flex justify-center items-start md:items-center"
     >
       <form
         onSubmit={(e) => {
