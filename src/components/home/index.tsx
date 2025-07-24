@@ -5,6 +5,7 @@ import Flayer from "./customs/flayer";
 import ItMotivation from "./customs/it-motivation";
 import AiPractice from "./customs/ai-practice";
 import SixBox from "./customs/six-box";
+import Courses from "./customs/courses";
 
 const Home = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const Home = () => {
       <ItMotivation />
       <AiPractice />
       <SixBox />
+      <Courses />
     </div>
   );
 };
