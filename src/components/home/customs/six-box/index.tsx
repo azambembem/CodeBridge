@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 const SixBox = () => {
   const boxData = [
     {
-      icon: "/icons/cad.svg",
+      icon: "./code.svg",
       title: "프로그래밍 입문 강의",
       description:
         "코드를 처음 접하는 분들을 위한 쉽고 체계적인 입문 강의로 기초를 탄탄히 다지세요.",

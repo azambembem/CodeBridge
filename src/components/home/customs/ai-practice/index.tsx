@@ -2,10 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const AiPractice = () => {
   return (
-    <div
-      className="w-full bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E]
- py-20 md:py-24 lg:py-28"
-    >
+    <div className="w-full bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E]py-20 md:py-24 lg:py-28">
       <div className="w-[90%] max-w-7xl mx-auto text-center">
         {/* Section Title */}
         <h2 className="font-semibold text-[#EEEEEE] mb-12 md:mb-16 text-[18px] md:text-[20px] lg:text-[28px]">
