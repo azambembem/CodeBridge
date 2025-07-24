@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import type { FC } from "react";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
-import { User, ShoppingCart, LogOut, X, Menu } from "lucide-react";
+import { User, ShoppingCart, LogOut, X, Menu, LogIn } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 
@@ -142,7 +142,7 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
             }}
           >
             <img src="./logo/login.svg" alt="user icon" className="w-5 h-5" />
-            로그인
+            Login
           </Button>
         </div>
       </div>
@@ -267,8 +267,8 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
           className="bg-[#3B3B3B] hover:bg-[#4F4F4F] px-4 py-2 text-sm gap-2 hidden sm:flex lg:flex items-center h-10 font-semibold transition-colors"
           onClick={() => navigate("/sign-in")}
         >
-          <img src="./logo/login.svg" alt="user icon" className="w-5 h-5" />
-          로그인
+          <LogIn className="w-5 h-5" />
+          Login
         </Button>
 
         {/* Mobile/Tablet User Icon */}
