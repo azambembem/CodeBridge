@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 import { useLocation, useNavigate } from "react-router-dom";
 import Flayer from "./customs/flayer";
+import ItMotivation from "./customs/it-motivation";
 
 const Home = () => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const Home = () => {
   return (
     <div>
       <Flayer />
+      <ItMotivation />
     </div>
   );
 };
