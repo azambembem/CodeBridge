@@ -81,7 +81,7 @@ const Navbar = () => {
             }}
             className="p-0"
           >
-            <h1 className="text-2xl font-bold text-[#EEEEEE] w-[105px] h-[36px] lg:w-[121px] lg:h-[40px]">
+            <h1 className="text-2xl font-semibold fon-weight text-[#2b4070] w-[105px] h-[36px] lg:w-[121px] lg:h-[40px]">
               CodeBridge
             </h1>
           </button>
