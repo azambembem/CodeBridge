@@ -1,10 +1,11 @@
 import { v4 } from "uuid";
 import type { TRoute } from "@/types/shared";
+import Home from "@/pages/home";
 
 export const authed_route: TRoute[] = [
   {
     path: "/",
-    element: <>home</>,
+    element: <Home />,
     id: v4()
   }
 ];
@@ -12,7 +13,7 @@ export const authed_route: TRoute[] = [
 export const unauthed_route: TRoute[] = [
   {
     path: "/",
-    element: <>home</>,
-    id: v4() // app.tsx index o'rniga id berish uchun ishlatdik
+    element: <Home />,
+    id: v4()
   }
 ];
