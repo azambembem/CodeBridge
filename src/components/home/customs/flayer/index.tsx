@@ -8,10 +8,7 @@ const Flayer = () => {
     }
   };
   return (
-    <div
-      className="w-full min-h-screen flex justify-center items-center relative  bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E]
-"
-    >
+    <div className="w-full min-h-screen flex justify-center items-center relative  bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E]">
       {/* Main Content */}
       <div className="relative w-full py-16 md:py-24 lg:py-32 z-10">
         <div className="w-[90%] max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
@@ -33,22 +30,24 @@ const Flayer = () => {
                 </span>
               </span>
             </h1>
-            <p className="text-[16px] lg:text-[20px] text-[#A5A5A5] mb-10 font-pre">
+            <p className="text-[16px] lg:text-[20px] text-[#eee] mb-10 font-pre">
               {/* 모바일: 3줄 */}
               <span className="block md:hidden">
-                반복적이고 번거로운 작업은
+                코딩, 데이터 과학, 네트워크 등
               </span>
-              <span className="block md:hidden">인공지능이 대신합니다.</span>
               <span className="block md:hidden">
-                생산성을 높이고 더 효율적으로 작업하세요.
+                다양한 IT 분야의 심층 지식을 온라인
+              </span>
+              <span className="block md:hidden">
+                교재를 통해 언제 어디서든 학습하세요.
               </span>
               {/* 태블릿 ~ PC: 2줄 */}
               <span className="hidden md:block">
                 <span className="block whitespace-nowrap">
-                  반복적이고 번거로운 작업은 인공지능이 대신합니다.
+                  코딩, 데이터 과학, 네트워크 등 다양한 IT 분야의 심층
                 </span>
                 <span className="block whitespace-nowrap">
-                  생산성을 높이고 더 효율적으로 작업하세요.
+                  지식을 온라인 교재를 통해 언제 어디서든 학습하세요.
                 </span>
               </span>
             </p>
@@ -57,7 +56,7 @@ const Flayer = () => {
                 className="bg-[#D5001C] text-[#EEEEEE] text-[16px] font-semibold rounded-md
                      w-[200px] h-[48px]  hover:bg-[#DB3446]"
               >
-                AI 설계 시작하기
+                코스 둘러보기
               </Button>
 
               <Button
@@ -75,8 +74,8 @@ const Flayer = () => {
           <div className="w-full lg:w-1/2 mt-10 lg:mt-0 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl">
               <img
-                src="/imgs/main-img.svg"
-                alt="ToFit FITC Dashboard"
+                src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/327456755/original/32d49163ea3a6418703983207c9af1f2a856e3a0/create-a-website-using-html-and-bootstrap.jpeg"
+                alt="ToFit FIT Dashboard"
                 className="w-full h-auto rounded-lg shadow-2xl object-contain"
                 style={{
                   backgroundColor: "rgba(38, 38, 38, 0.8)",
