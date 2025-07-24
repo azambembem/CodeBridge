@@ -245,7 +245,7 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
               dispatch(setStore({ menuOpen: !menuOpen }));
             }}
             aria-label="Toggle menu"
-            className="lg:hidden p-0 w-10 h-10 flex items-center justify-center hover:bg-[#4F4F4F] rounded-md"
+            className="lg:hidden p-0 w-10 h-10 flex items-center justify-center hover:cursor-pointer rounded-md"
           >
             {menuOpen ? (
               <X className="w-7 h-7 text-[#eee]" />
@@ -285,7 +285,7 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
 
         {/* Mobile/Tablet User Icon */}
         <div
-          className="w-10 h-10 rounded-md flex items-center justify-center cursor-pointer bg-[#3B3B3B] hover:bg-[#4F4F4F] transition-colors sm:hidden"
+          className="w-10 h-10 rounded-md flex items-center justify-center cursor-pointer hover:cursor-pointer transition-colors sm:hidden"
           onClick={handleMobileTabletUserClick}
         >
           <User className="w-5 h-5 text-[#eee]" />
@@ -293,7 +293,7 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
 
         {/* Hamburger Menu */}
         <button
-          className="lg:hidden p-0 w-10 h-10 flex items-center justify-center hover:bg-[#4F4F4F] rounded-md"
+          className="lg:hidden p-0 w-10 h-10 flex items-center justify-center hover:cursor-pointer rounded-md"
           onClick={() => {
             dispatch(setStore({ menuOpen: !menuOpen }));
           }}

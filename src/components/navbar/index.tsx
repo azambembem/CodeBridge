@@ -25,9 +25,9 @@ const Navbar = () => {
       />
 
       {/* Sheet - tablet uchun 320px, mobile uchun 248px */}
-      <div className="fixed top-0 left-0 w-full h-[390px] sm:h-[390px] bg-[#262626] z-50 transform transition-transform duration-300 ease-in-out lg:hidden rounded-b-lg">
+      <div className="fixed top-0 left-0 w-full h-[390px] sm:h-[390px]  bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E] z-50 transform transition-transform duration-300 ease-in-out lg:hidden rounded-b-lg">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-[#3b3b3b]">
+        <div className="flex items-center justify-between p-4">
           <Button
             variant="link"
             className="p-0"
@@ -36,16 +36,14 @@ const Navbar = () => {
               dispatch(setStore({ menuOpen: false }));
             }}
           >
-            <img
-              className="w-[105px] h-[36px] lg:w-[121px] lg:h-[40px]"
-              src="./logo/.svg"
-              alt="logo"
-            />
+            <h1 className="text-2xl font-semibold font-pre text-[#2b4070] w-[105px] h-[36px] lg:w-[121px] lg:h-[40px]">
+              CodeBridge
+            </h1>
           </Button>
           <button
             onClick={() => dispatch(setStore({ menuOpen: false }))}
             type="button"
-            className="p-2 hover:bg-[#4F4F4F]"
+            className="p-2 hover:border-2 border-solid rounded-lg"
           >
             <X className="w-7 h-7 text-[#eee]" />
           </button>
@@ -57,7 +55,7 @@ const Navbar = () => {
             <Button
               key={item.name}
               variant="ghost"
-              className="w-full justify-center text-[#EEEEEE] hover:bg-[#3B3B3B] hover:text-[#eee] h-12 text-sm sm:text-base font-light"
+              className="w-full justify-center text-[#333] font-pre font-semibold hover:bg-[#918cb9] hover:text-[#eee] h-12 text-[12px] sm:text-base"
               onClick={() => handleMenuClick(item)}
             >
               {item.name}
@@ -74,6 +72,7 @@ const Navbar = () => {
         <div className="w-[90%] max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <button
+            type="button"
             onClick={() => {
               navigate("/");
               // Agar menu ochiq bo'lsa yopish
@@ -91,7 +90,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <Button
                 key={item.name}
-                className="text-sm xl:text-base text-[#EEEEEE] hover:text-[#eee] transition-colors"
+                className="text-sm xl:text-base text-[#333] hover:text-[#eee] transition-colors font-semibold font-pre"
                 variant="link"
                 onClick={() => handleMenuClick(item)}
               >
