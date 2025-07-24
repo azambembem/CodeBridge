@@ -143,7 +143,7 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
         <div className="p-6">
           {/* Login Button */}
           <Button
-            className="w-full bg-[#3B3B3B] hover:bg-[#4F4F4F] text-[#eee] h-[52px] text-base font-semibold rounded-lg flex items-center justify-center gap-2"
+            className="w-full bg-[#3B3B3B] hover:bg-[#4F4F4F] text-[#eee] h-[52px] text-base font-semibold font-pre rounded-lg flex items-center justify-center gap-2"
             onClick={() => {
               navigate("/sign-in");
               setIsOpen(false);
@@ -276,7 +276,7 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
         {/* Desktop and Tablet Login Button */}
         <button
           type="button"
-          className="hover:cursor-pointer text-[#eee] px-4 py-2 text-[18px] gap-2 hidden sm:flex lg:flex items-center h-10 font-semibold transition-colors"
+          className=" border-2 border-solid rounded-md hover:cursor-pointer text-[#eee] px-4 bg- py-2 text-[18px] gap-2 hidden sm:flex lg:flex items-center h-10 font-semibold transition-colors"
           onClick={() => navigate("/sign-in")}
         >
           <LogIn className="w-5 h-5  text-[#eee]" />
