@@ -6,6 +6,7 @@ import ItMotivation from "./customs/it-motivation";
 import AiPractice from "./customs/ai-practice";
 import SixBox from "./customs/six-box";
 import Courses from "./customs/courses";
+import ContactSession from "./customs/contact-session";
 
 const Home = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const Home = () => {
       <AiPractice />
       <SixBox />
       <Courses />
+      <ContactSession />
     </div>
   );
 };

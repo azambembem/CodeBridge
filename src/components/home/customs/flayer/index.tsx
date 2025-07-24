@@ -75,7 +75,7 @@ const Flayer = () => {
             <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl">
               <img
                 src="./home-img.png"
-                alt="ToFit FIT Dashboard"
+                alt="Dashboard"
                 className="w-full h-auto rounded-lg shadow-2xl object-contain"
                 style={{
                   backgroundColor: "rgba(38, 38, 38, 0.8)",

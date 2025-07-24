@@ -71,7 +71,7 @@ const Courses = () => {
   ];
 
   return (
-    <div className="w-full bg-[#262626] py-20 md:py-24 lg:py-28">
+    <div className="w-full  bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E] py-20 md:py-24 lg:py-28">
       <div className="w-full max-w-none mx-auto text-center">
         {/* Main Title */}
         <h2 className="text-[#EEEEEE] mb-16 md:mb-20 leading-relaxed px-4 text-[18px] md:text-[20px] lg:text-[28px] font-semibold">
