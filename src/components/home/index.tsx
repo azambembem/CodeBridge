@@ -1,6 +1,6 @@
-import Categories from "./customs/categories";
-import CategorySet from "./customs/category-set";
-import Flayer from "./customs/flayer";
+import Categories from "./categories";
+import CategorySet from "./category-set";
+import Flayer from "./flayer";
 
 const Home = () => {
   return (
