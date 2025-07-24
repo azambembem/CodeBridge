@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Flayer from "./customs/flayer";
 import ItMotivation from "./customs/it-motivation";
 import AiPractice from "./customs/ai-practice";
+import SixBox from "./customs/six-box";
 
 const Home = () => {
   const location = useLocation();
@@ -28,6 +29,7 @@ const Home = () => {
       <Flayer />
       <ItMotivation />
       <AiPractice />
+      <SixBox />
     </div>
   );
 };
