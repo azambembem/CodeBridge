@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
 import type { FC } from "react";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
-import { User, ShoppingCart, LogOut, X, Menu, LogIn } from "lucide-react";
+import {
+  User,
+  ShoppingCart,
+  LogOut,
+  X,
+  Menu,
+  LogIn,
+  Heart
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 
@@ -141,7 +149,7 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
               setIsOpen(false);
             }}
           >
-            <img src="./logo/login.svg" alt="user icon" className="w-5 h-5" />
+            <LogIn className="w-5 h-5" />
             Login
           </Button>
         </div>
@@ -165,7 +173,7 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
           <div className="w-10 h-10 bg-[#3B3B3B] hover:bg-[#4F4F4F] cursor-pointer rounded-md flex items-center justify-center">
             <ShoppingCart
               onClick={() => navigate("/shopping-cart")}
-              className="w-5 h-5 text-[#eee]"
+              className="w-5 h-5  text-[#eee]"
             />
           </div>
 
@@ -258,18 +266,22 @@ export const Actions: FC<ActionsProps> = ({ setIsOpen, isOpen }) => {
     <>
       <div className="flex items-center gap-3 sm:gap-4">
         {/* Shopping Cart */}
-        <div className="w-10 h-10 bg-[#3B3B3B] hover:bg-[#4F4F4F] rounded-md flex items-center justify-center">
+        <div className="w-10 h-10  hover:cursor-pointer rounded-md flex items-center justify-center">
           <ShoppingCart className="w-5 h-5 text-[#eee]" />
+        </div>
+        <div className="w-10 h-10  hover:cursor-pointer rounded-md flex items-center justify-center">
+          <Heart className="w-5 h-5 text-[#eee]" />
         </div>
 
         {/* Desktop and Tablet Login Button */}
-        <Button
-          className="bg-[#3B3B3B] hover:bg-[#4F4F4F] px-4 py-2 text-sm gap-2 hidden sm:flex lg:flex items-center h-10 font-semibold transition-colors"
+        <button
+          type="button"
+          className="hover:cursor-pointer text-[#eee] px-4 py-2 text-[18px] gap-2 hidden sm:flex lg:flex items-center h-10 font-semibold transition-colors"
           onClick={() => navigate("/sign-in")}
         >
-          <LogIn className="w-5 h-5" />
+          <LogIn className="w-5 h-5  text-[#eee]" />
           Login
-        </Button>
+        </button>
 
         {/* Mobile/Tablet User Icon */}
         <div
