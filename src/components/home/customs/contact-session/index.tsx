@@ -74,7 +74,7 @@ const ContactSession = () => {
         <h1 className="text-[#EEEEEE] text-center text-[18px] md:text-[20] lg:text-[28px] font-semibold ">
           무엇이든 문의하세요
         </h1>
-        <p className="text-[14px] md:text-[16px] text-[#A5A5A5] text-center mb-8">
+        <p className="text-[14px] md:text-[16px] text-[#eee] text-center mb-8">
           {/* 모바일: 3줄 */}
           <span className="block md:hidden">강의 내용부터 신청 방법까지,</span>
           <span className="block md:hidden">어떤 질문이든 환영합니다!</span>
@@ -89,11 +89,11 @@ const ContactSession = () => {
         {/* Org Name */}
         <div className="space-y-1">
           <Input
-            className={`border rounded-md bg-transparent text-[#EEEEEE] h-14 text-lg px-4 placeholder:text-[#747474] ${
+            className={`border rounded-md bg-transparent text-[#EEEEEE] h-14 text-lg px-4 placeholder:text-[#eee] ${
               formik.touched.organization_name &&
               formik.errors.organization_name
                 ? "border-[#FF7B7B]"
-                : "border-[#4F4F4F]"
+                : "border-[#4f4f4f]"
             }`}
             id="name"
             placeholder="학교 또는 단체명 (선택)"
@@ -110,7 +110,7 @@ const ContactSession = () => {
         {/* Inquiry Type */}
         <div className="space-y-1">
           <Input
-            className={`border rounded-md bg-transparent text-[#EEEEEE] h-14 text-lg px-4 placeholder:text-[#747474] ${
+            className={`border rounded-md bg-transparent text-[#EEEEEE] h-14 text-lg px-4 placeholder:text-[#eee] ${
               formik.touched.name && formik.errors.name
                 ? "border-[#FF7B7B]"
                 : "border-[#4F4F4F]"
@@ -129,7 +129,7 @@ const ContactSession = () => {
         {/* Phone */}
         <div className="space-y-1">
           <Input
-            className={`border rounded-md bg-transparent text-[#EEEEEE] h-14 text-lg px-4 placeholder:text-[#747474] ${
+            className={`border rounded-md bg-transparent text-[#EEEEEE] h-14 text-lg px-4 placeholder:text-[#eee] ${
               formik.touched.phone && formik.errors.phone
                 ? "border-[#FF7B7B]"
                 : "border-[#4F4F4F]"
@@ -148,7 +148,7 @@ const ContactSession = () => {
         {/* Email */}
         <div className="space-y-1">
           <Input
-            className={`border rounded-md bg-transparent text-[#EEEEEE] h-14 text-lg px-4 placeholder:text-[#747474] ${
+            className={`border rounded-md bg-transparent text-[#EEEEEE] h-14 text-lg px-4 placeholder:text-[#eee] ${
               formik.touched.email && formik.errors.email
                 ? "border-[#FF7B7B]"
                 : "border-[#4F4F4F]"
@@ -167,13 +167,13 @@ const ContactSession = () => {
         {/* Message */}
         <div className="space-y-1">
           <Textarea
-            className={`border rounded-md bg-transparent text-[#EEEEEE] text-lg px-4 py-4 placeholder:text-[#747474] min-h-[120px] ${
+            className={`border rounded-md bg-transparent text-[#EEEEEE] text-lg px-4 py-4 placeholder:text-[#eee] min-h-[120px] ${
               formik.touched.enquire && formik.errors.enquire
                 ? "border-[#FF7B7B]"
                 : "border-[#4F4F4F]"
             }`}
             id="message"
-            placeholder="관심 강의나 문의 내용을 작성해주세요"
+            placeholder="문의 내용을 작성해주세요"
             rows={5}
             {...formik.getFieldProps("enquire")}
           />
@@ -186,13 +186,13 @@ const ContactSession = () => {
 
         {/* 약관 전문 버튼 - 모바일 */}
         <div className="flex justify-start mb-4 md:hidden">
-          <Button
+          <button
             type="button"
-            className="text-[12px] font-light text-[#EEEEEE] hover:bg-[#646060] px-4 h-[30px] w-[77px] bg-[#3B3B3B] "
+            className="text-[12px] font-light font-pre text-[#EEEEEE] hover:cursor-pointer px-2 h-[30px] w-[77px] border-2 border-solid"
             onClick={() => setShowPersonalInfoModal(true)}
           >
             약관 전문
-          </Button>
+          </button>
         </div>
 
         {/* Checkboxes */}
@@ -214,17 +214,20 @@ const ContactSession = () => {
                   formik.setFieldValue("agree1", val as boolean)
                 }
               />
-              <Label htmlFor="agree1" className="text-[14px] font-light">
+              <Label
+                htmlFor="agree1"
+                className="text-[14px] font-light font-pre text-[#eee]"
+              >
                 [필수] 개인정보 수집 및 이용 동의
               </Label>
             </div>
-            <Button
+            <button
               type="button"
-              className="hidden md:block text-[12px] text-[#EEEEEE] font-light hover:bg-[#4F4F4F] px-4 h-[46px] w-[105px] bg-[#3B3B3B]"
+              className="hidden md:block text-[12px] font-pre text-[#EEEEEE] font-light hover:cursor-pointer px-4 h-[46px] w-[105px] border-2 border-solid"
               onClick={() => setShowPersonalInfoModal(true)}
             >
               약관 전문
-            </Button>
+            </button>
           </div>
           {formik.touched.agree1 &&
           formik.errors.agree1 &&
@@ -244,7 +247,10 @@ const ContactSession = () => {
                 formik.setFieldValue("agree2", val as boolean)
               }
             />
-            <Label htmlFor="agree2" className="text-[14px] font-light">
+            <Label
+              htmlFor="agree2"
+              className="text-[14px] font-light font-pre text-[#eee]"
+            >
               [선택] 마케팅 및 광고 수신 동의
             </Label>
           </div>

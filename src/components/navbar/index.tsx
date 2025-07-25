@@ -68,7 +68,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="border-b border-solid pt-6 pb-5 bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E]">
+      <div className="pt-6 pb-5 bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E]">
         <div className="w-[90%] max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <button
