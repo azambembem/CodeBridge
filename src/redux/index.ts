@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import signUpModalReducer from "./stores/sign-up";
+import signUpModalReducer from "./stores/sign-up";
 // import forgotPasswordReducer from "./stores/forgot-password";
 // import manageAccountReducer from "./stores/my-profile/manage-account";
 import navbarReducer from "./stores/navbar";
 
 const store = configureStore({
   reducer: {
-    // signUpModal: signUpModalReducer,
+    signUpModal: signUpModalReducer,
     // forgotPasswordFlow: forgotPasswordReducer,
     // manageAccount: manageAccountReducer,
     navbar: navbarReducer
