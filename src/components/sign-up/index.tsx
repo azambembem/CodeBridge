@@ -4,8 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ChevronRight } from "lucide-react";
-// import ServiceTermsModal from "./modals/service";
-// import PrivacyTermsModal from "./modals/privacy";
+import ServiceTermsModal from "./modals/service";
+import PrivacyTermsModal from "./modals/privacy";
 import { useNavigate } from "react-router-dom";
 import { useSignUpFeatures } from "./feature";
 import { useReduxDispatch } from "@/hooks/useRedux"; // Redux hook'larini import qilamiz
@@ -296,8 +296,8 @@ const SignUp = () => {
       </div>
 
       {/* Modals */}
-      {/* <ServiceTermsModal />
-      <PrivacyTermsModal /> */}
+      <ServiceTermsModal />
+      <PrivacyTermsModal />
     </div>
   );
 };
