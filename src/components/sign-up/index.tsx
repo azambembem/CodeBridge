@@ -48,8 +48,8 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1F1F1F] flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-[#262626] rounded-md p-6 sm:p-8">
+    <div className="min-h-screen  bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E] flex items-center justify-center p-4">
+      <div className="w-full max-w-md  bg-gradient-to-l from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E] rounded-md p-6 sm:p-8">
         <h1 className="text-[#eee] text-[16px] md:text-[20px] lg:text-[24px] font-semibold text-center mb-8">
           회원가입
         </h1>
@@ -68,7 +68,7 @@ const SignUp = () => {
                 id="surname"
                 placeholder="성"
                 {...formik.getFieldProps("surname")}
-                className="bg-[#262626] border-[#4F4F4F] text-[#eee] placeholder-[#747474] text-[14px] font-light h-12"
+                className=" border-[#eee] text-[#eee] placeholder-[#eee] text-[14px] font-light h-12"
               />
               {formik.touched.surname && formik.errors.surname && (
                 <p className="text-[#FF7B7B] text-[12px] font-light mt-1">
@@ -87,7 +87,7 @@ const SignUp = () => {
                 id="name"
                 placeholder="이름"
                 {...formik.getFieldProps("name")}
-                className="bg-[#262626] border-[#4F4F4F] text-[#eee] placeholder-[#747474] text-[14px] font-light h-12"
+                className=" border-[#eee] text-[#eee] placeholder-[#747474] text-[14px] font-light h-12"
               />
               {formik.touched.name && formik.errors.name && (
                 <p className="text-[#FF7B7B] text-[12px] font-light mt-1">
@@ -110,7 +110,7 @@ const SignUp = () => {
               type="email"
               placeholder="이메일을 입력해 주세요"
               {...formik.getFieldProps("email")}
-              className="bg-[#262626] border-[#4F4F4F] text-[#eee] placeholder-[#747474] text-[14px] font-light h-12"
+              className=" border-[#eees] text-[#eee] placeholder-[#747474] text-[14px] font-light h-12"
             />
             {formik.touched.email && formik.errors.email && (
               <p className="text-[#FF7B7B] text-[12px] font-light mt-1">
@@ -132,7 +132,7 @@ const SignUp = () => {
               type="password"
               placeholder="비밀번호를 입력해 주세요"
               {...formik.getFieldProps("password")}
-              className="bg-[#262626] border-[#4F4F4F] text-[#eee] placeholder-[#747474] text-[14px] font-light h-12"
+              className=" border-[#eee] text-[#eee] placeholder-[#747474] text-[14px] font-light h-12"
             />
             {formik.touched.password && formik.errors.password && (
               <p className="text-[#FF7B7B] text-[12px] font-light mt-1">
@@ -154,7 +154,7 @@ const SignUp = () => {
               type="password"
               placeholder="비밀번호를 다시 입력해 주세요"
               {...formik.getFieldProps("confirmPassword")}
-              className="bg-[#262626] border-[#4F4F4F] text-[#eee] placeholder-[#747474] text-[14px] font-light h-12"
+              className="border-[#eee] text-[#eee] placeholder-[#747474] text-[14px] font-light h-12"
             />
             {formik.touched.confirmPassword &&
               formik.errors.confirmPassword && (
