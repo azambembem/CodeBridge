@@ -1,8 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import axios, { type AxiosError } from "axios";
 import type { AxiosResponse, MutationResult } from "@/types/shared";
-// import type { SignUpSchemaType } from "../models/validations/sign-up";
-// import type { AuthSuccessResponse, AuthErrorResponse } from "@/types/sign-up";
+import type { SignUpSchemaType } from "../models/validations/sign-up";
+import type { AuthSuccessResponse, AuthErrorResponse } from "@/types/sign-up";
 import { useNavigate } from "react-router-dom";
 import { useDialog } from "../ui/use-dialog";
 
