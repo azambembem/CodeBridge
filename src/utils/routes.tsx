@@ -3,6 +3,8 @@ import type { TRoute } from "@/types/shared";
 import Home from "@/pages/home";
 import SignUp from "@/pages/sign-up";
 import SignIn from "@/pages/sign-in";
+import { AccountVerified } from "@/pages/account-verified";
+import { VerifyAccount } from "@/pages/verify-account";
 
 export const authed_route: TRoute[] = [
   {
@@ -26,6 +28,16 @@ export const unauthed_route: TRoute[] = [
   {
     path: "/sign-up",
     element: <SignUp />,
+    id: v4()
+  },
+  {
+    path: "/verify-account",
+    element: <VerifyAccount />,
+    id: v4()
+  },
+  {
+    path: "/account-verified",
+    element: <AccountVerified />,
     id: v4()
   }
 ];
