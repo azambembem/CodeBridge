@@ -9,11 +9,11 @@ import PrivacyTermsModal from "./modals/privacy";
 import { useNavigate } from "react-router-dom";
 import { useSignUpFeatures } from "./feature";
 import { useReduxDispatch } from "@/hooks/useRedux"; // Redux hook'larini import qilamiz
-// import { setSignUpModal } from "@/redux/stores/sign-up"; // Yangi Redux action'ini import qilamiz
-// import {
-//   signUpSchema,
-//   type SignUpSchemaType,
-// } from "../models/validations/sign-up";
+import { setSignUpModal } from "@/redux/stores/sign-up"; // Yangi Redux action'ini import qilamiz
+import {
+  signUpSchema,
+  type SignUpSchemaType
+} from "../models/validations/sign-up";
 
 const SignUp = () => {
   const navigate = useNavigate();
