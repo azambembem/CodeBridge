@@ -4,7 +4,7 @@ import {
   Select,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from "@/components/ui/select";
 
 const PersonalInfo = () => {
@@ -1060,7 +1060,7 @@ const PersonalInfo = () => {
                   <div className="flex items-start gap-2 sm:gap-3">
                     <span className="w-1.5 h-1.5 sm:w-1.5 sm:h-1.5 bg-[#a5a5a5] rounded-full mt-2 flex-shrink-0"></span>
                     <span className="text-[14px] sm:text-base lg:text-lg leading-relaxed text-[#a5a5a5] md:text-[15px]">
-                      연락처 : contact@tofit.org
+                      contact@codebridge.org
                     </span>
                   </div>
                 </div>
@@ -1196,7 +1196,7 @@ const PersonalInfo = () => {
                   <div className="flex items-start gap-2 sm:gap-3 lg:gap-4">
                     <span className="w-1.5 h-1.5 sm:w-1.5 sm:h-1.5 bg-[#a5a5a5] rounded-full mt-2 flex-shrink-0"></span>
                     <span className="text-[14px] sm:text-base lg:text-lg leading-relaxed text-[#a5a5a5] md:text-[15px]">
-                      연락처 : contact@tofit.org
+                      contact@codebridge.org
                     </span>
                   </div>
                 </div>
@@ -1237,7 +1237,7 @@ const PersonalInfo = () => {
                   <div className="flex items-start gap-2 sm:gap-3 lg:gap-4">
                     <span className="w-1.5 h-1.5 sm:w-1.5 sm:h-1.5 bg-[#a5a5a5] rounded-full mt-2 flex-shrink-0"></span>
                     <span className="text-[14px] sm:text-base lg:text-lg leading-relaxed text-[#a5a5a5] md:text-[15px]">
-                      연락처 : contact@tofit.org
+                      contact@codebridge.org
                     </span>
                   </div>
                 </div>
@@ -1356,7 +1356,7 @@ const PersonalInfo = () => {
                   <div className="flex items-start gap-2 sm:gap-3 lg:gap-4">
                     <span className="w-1.5 h-1.5 sm:w-1.5 sm:h-1.5 bg-[#a5a5a5] rounded-full mt-2 flex-shrink-0"></span>
                     <span className="text-[14px] sm:text-base lg:text-lg leading-relaxed text-[#a5a5a5] md:text-[15px]">
-                      연락처 : contact@tofit.org
+                      contact@codebridge.org
                     </span>
                   </div>
                 </div>
