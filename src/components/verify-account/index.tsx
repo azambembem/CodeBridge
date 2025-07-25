@@ -25,15 +25,15 @@ export const VerifyAccount = () => {
         </p>
 
         <div className="space-y-6 sm:space-y-5 lg:space-y-6">
-          <Button
-            className="w-full bg-[#3B3B3B] hover:bg-[#4b4b4b] text-[#EEEEEE] font-semibold h-12 rounded-md transition-colors disabled:opacity-50 text-[14px] md:text-[16px] lg:text-[16px] mt-6 sm:mt-8 lg:mt-10"
+          <button
+            className="w-full border-2 border-solid hover:bg-[#c1a873] text-[#EEEEEE] font-semibold h-12 rounded-md transition-colors disabled:opacity-50 text-[14px] md:text-[16px] lg:text-[16px] mt-6 sm:mt-8 lg:mt-10"
             onClick={() => onResendEmail()}
           >
             이메일 재전송
-          </Button>
+          </button>
 
           <div className="text-center mt-4 sm:mt-6 lg:mt-8">
-            <span className="text-[#A5A5A5] text-[13px] md:text-[14px] font-light">
+            <span className="text-[#D5001C] text-[13px] md:text-[14px] font-light">
               인증을 완료 하셨나요?
             </span>
             <button
