@@ -29,7 +29,7 @@ const SignIn = () => {
     <div className="min-h-screen bg-[#262626] flex items-start justify-center pt-[152px] p-4">
       <div className="w-full max-w-[90vw] sm:max-w-md lg:max-w-lg bg-transparent sm:bg-[#2c2c2c] rounded-none md:rounded-[12px] p-4 sm:p-6 lg:p-12">
         <h1 className="text-[#EEEEEE] text-[16px] md:text-[20px] lg:text-[24px] font-semibold text-center mb-6 sm:mb-8 lg:mb-12">
-          관리자 로그인
+          로그인
         </h1>
 
         <form
