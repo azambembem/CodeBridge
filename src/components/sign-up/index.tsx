@@ -281,7 +281,7 @@ const SignUp = () => {
           </Button>
 
           <div className="text-center">
-            <span className="text-[#A5A5A5] text-[14px] font-light">
+            <span className="text-[#D5001C] text-[14px] font-light">
               이미 계정이 있으신가요?{" "}
             </span>
             <button

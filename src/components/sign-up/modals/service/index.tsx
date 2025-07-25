@@ -3,7 +3,7 @@ import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogTitle,
+  DialogTitle
 } from "@/components/ui/dialog";
 import { useReduxDispatch, useReduxSelector } from "@/hooks/useRedux";
 import { setSignUpModal } from "@/redux/stores/sign-up";
@@ -35,9 +35,10 @@ const ServiceTermsModal = () => {
                 제1조 목적
               </h2>
               <p className="text-[12px] leading-relaxed md:text-[14px] lg:text-[14px] text-[#a5a5a5] font-light">
-                이 약관은 주식회사 투피트(이하 “회사”)가 운영하고 제공하는
-                서비스(이하 “서비스”)를 이용함에 있어 “회사”와 “회원”과의 권리,
-                의무, 책임사항 및 필요사항의 규정을 목적으로 합니다.
+                이 약관은 CodeBridge 온라인 IT 교육 센터(이하 “교육 센터”)가
+                제공하는 온라인 IT 강의 및 관련 서비스(이하 “서비스”)의 이용과
+                관련하여 “교육 센터”와 “회원” 간의 권리, 의무 및 책임사항을
+                규정함을 목적으로 합니다.
               </p>
             </div>
 
@@ -50,13 +51,26 @@ const ServiceTermsModal = () => {
               </p>
               <ol className="list-decimal list-outside pl-4 sm:pl-6 space-y-2 sm:space-y-3 text-[12px] leading-relaxed md:text-[14px] lg:text-[14px] text-[#a5a5a5] font-light">
                 <li>
-                  “서비스”란 회사가 인터넷 웹 등을 통해 직접 구성한 소프트웨어
-                  또는 용역(이하 “용역”)을 이용하거나 컨설팅을 제공하는 서비스를
-                  말합니다.
+                  “서비스”란 교육 센터가 인터넷 웹사이트 및 모바일 등을 통해
+                  제공하는 온라인 IT 강의, 교육 콘텐츠, 커뮤니티, 학습 지원 및
+                  기타 부가 서비스를 말합니다.
                 </li>
                 <li>
-                  “회원”이란 본 약관에 동의하고 서비스를 이용하는 사용자를
-                  말합니다.
+                  “회원”이란 본 약관에 동의하고 교육 센터가 제공하는 서비스를
+                  이용하는 자를 말합니다.
+                </li>
+                <li>
+                  “콘텐츠”란 교육 센터가 서비스에서 제공하는 텍스트, 이미지,
+                  동영상, 강의 자료 등 모든 디지털 자료를 말합니다.
+                </li>
+                <li>
+                  “아이디(ID)”란 회원의 식별과 서비스 이용을 위하여 회원이
+                  설정하고 교육 센터가 승인한 문자와 숫자의 조합을 말합니다.
+                </li>
+                <li>
+                  “비밀번호(Password)”란 회원이 부여받은 아이디와 일치되는
+                  회원임을 확인하고, 회원의 권익 및 비밀을 보호하기 위하여 회원
+                  자신이 설정한 문자와 숫자의 조합을 말합니다.
                 </li>
               </ol>
             </div>
